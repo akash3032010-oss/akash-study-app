@@ -1,0 +1,55 @@
+/* পুরো পেজের স্টাইল */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7f6;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* শিরোনামের স্টাইল */
+h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* বাটনগুলোর কনটেইনার */
+.subject-buttons {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* বাটনগুলোর সুন্দর ডিজাইন */
+button {
+  width: 100%;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* মাউস বা টাচ করলে বাটনের রঙ পরিবর্তন */
+button:hover {
+  background-color: #2980b9;
+}
+
+/* লিংকের নিচের আন্ডারলাইন সরানোর জন্য */
+a {
+  text-decoration: none;
+}
