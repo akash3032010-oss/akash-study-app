@@ -1,90 +1,38 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #eef6ff, #f8fbff);
+  background-color: #f4f7f6;
   margin: 0;
-  padding: 25px 15px;
+  padding: 20px;
   text-align: center;
-  color: #172554;
-  min-height: 100vh;
-}
-
-h1 {
-  color: #1e3a8a;
-  font-size: 30px;
-  margin: 15px 0 10px;
-}
-
-p {
-  font-size: 16px;
-  color: #64748b;
-  line-height: 1.6;
+  color: #333;
 }
 
 .subject-buttons {
-  margin: 30px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  max-width: 360px;
+  max-width: 700px;
+  margin: auto;
 }
 
-button {
-  width: 100%;
-  background: linear-gradient(135deg, #2563eb, #38bdf8);
-  color: white;
-  border: none;
-  padding: 14px 20px;
-  font-size: 17px;
-  font-weight: bold;
-  border-radius: 14px;
-  cursor: pointer;
-  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.20);
-  transition: 0.2s ease;
+.subject-buttons h2 {
+  font-size: 22px;
+  margin: 25px 0 12px;
 }
 
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
-}
-
-button:active {
-  transform: scale(0.96);
-}
-
-a {
+.subject-buttons a {
   text-decoration: none;
 }
 
-h2 {
-  color: #1e3a8a;
-  margin-top: 30px;
-  margin-bottom: 15px;
+.subject-buttons button {
+  width: 180px;
+  height: 50px;
+  margin: 6px;
+  border: none;
+  border-radius: 10px;
+  background-color: #3498db;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
 }
 
-@media (max-width: 500px) {
-  body {
-    padding: 20px 12px;
+.subject-buttons button:hover {
+  background-color: #2980b9;
   }
-
-  h1 {
-    font-size: 27px;
-  }
-
-  p {
-    font-size: 15px;
-  }
-
-  .subject-buttons {
-    max-width: 330px;
-    gap: 12px;
-  }
-
-  button {
-    font-size: 16px;
-    padding: 13px 16px;
-  }
-}
