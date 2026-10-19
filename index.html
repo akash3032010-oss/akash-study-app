@@ -1,3 +1,5 @@
+
+    
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -40,13 +42,13 @@
         </p>
 
         <!-- Class Selection Buttons -->
-        <div id="classes-section" class="flex flex-wrap justify-center gap-3 mb-10">
-            <button onclick="showClass(5)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-slate-800 border border-slate-700 hover:border-yellow-400 transition shadow">Class 5</button>
-            <button onclick="showClass(6)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-slate-800 border border-slate-700 hover:border-yellow-400 transition shadow">Class 6</button>
-            <button onclick="showClass(7)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-slate-800 border border-slate-700 hover:border-yellow-400 transition shadow">Class 7</button>
-            <button onclick="showClass(8)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-slate-800 border border-slate-700 hover:border-yellow-400 transition shadow">Class 8</button>
-            <button onclick="showClass(9)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-slate-800 border border-slate-700 hover:border-yellow-400 transition shadow">Class 9</button>
-            <button onclick="showClass(10)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-yellow-400 text-slate-900 border border-yellow-400 transition shadow">Class 10</button>
+        <div id="classes-section" class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-10 max-w-3xl mx-auto">
+            <button onclick="showClass(5, this)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-slate-800 border border-slate-700 hover:border-yellow-400 transition shadow">Class 5</button>
+            <button onclick="showClass(6, this)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-slate-800 border border-slate-700 hover:border-yellow-400 transition shadow">Class 6</button>
+            <button onclick="showClass(7, this)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-slate-800 border border-slate-700 hover:border-yellow-400 transition shadow">Class 7</button>
+            <button onclick="showClass(8, this)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-slate-800 border border-slate-700 hover:border-yellow-400 transition shadow">Class 8</button>
+            <button onclick="showClass(9, this)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-slate-800 border border-slate-700 hover:border-yellow-400 transition shadow">Class 9</button>
+            <button id="default-class-btn" onclick="showClass(10, this)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-yellow-400 text-slate-900 border border-yellow-400 transition shadow">Class 10</button>
         </div>
     </section>
 
@@ -108,46 +110,54 @@
             ]
         };
 
-        function showClass(classNum) {
-            // Update active button styles
+        function showClass(classNum, btnElement) {
+            // Update button styles
             document.querySelectorAll('.class-btn').forEach(btn => {
                 btn.classList.remove('bg-yellow-400', 'text-slate-900', 'border-yellow-400');
                 btn.classList.add('bg-slate-800', 'text-white', 'border-slate-700');
             });
-            event.target.classList.remove('bg-slate-800', 'text-white', 'border-slate-700');
-            event.target.classList.add('bg-yellow-400', 'text-slate-900', 'border-yellow-400');
 
-            // Update Title
-            document.getElementById('selected-title.innerHTML').innerHTML = `<i class="fa-solid fa-book-open"></i> Subjects for Class ${classNum}`;
+            if(btnElement) {
+                btnElement.classList.remove('bg-slate-800', 'text-white', 'border-slate-700');
+                btnElement.classList.add('bg-yellow-400', 'text-slate-900', 'border-yellow-400');
+            }
+
+            // Fixed element selection bug
+            const titleElem = document.getElementById('selected-title');
+            if(titleElem) {
+                titleElem.innerHTML = `<i class="fa-solid fa-book-open"></i> Subjects for Class ${classNum}`;
+            }
 
             // Render Subjects
             const grid = document.getElementById('subject-grid');
             grid.innerHTML = '';
             
-            subjectData[classNum].forEach(sub => {
-                grid.innerHTML += `
-                    <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 hover:border-yellow-400 transition shadow-lg flex flex-col justify-between">
-                        <div>
-                            <i class="fa-solid ${sub.icon} text-4xl ${sub.color} mb-3"></i>
-                            <h4 class="font-bold text-xl mb-1">${sub.name}</h4>
-                            <p class="text-xs text-slate-400 mb-6">${sub.desc}</p>
+            if(subjectData[classNum]) {
+                subjectData[classNum].forEach(sub => {
+                    grid.innerHTML += `
+                        <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 hover:border-yellow-400 transition shadow-lg flex flex-col justify-between">
+                            <div>
+                                <i class="fa-solid ${sub.icon} text-4xl ${sub.color} mb-3"></i>
+                                <h4 class="font-bold text-xl mb-1">${sub.name}</h4>
+                                <p class="text-xs text-slate-400 mb-6">${sub.desc}</p>
+                            </div>
+                            <div class="space-y-2">
+                                <a href="mock-test.html" class="block text-center w-full bg-slate-700 hover:bg-yellow-400 hover:text-slate-900 font-bold py-2 rounded-xl transition text-sm">
+                                    <i class="fa-solid fa-play mr-1"></i> Lectures & Notes
+                                </a>
+                                <a href="mock-test.html" class="block text-center w-full bg-indigo-600/30 border border-indigo-500/40 hover:bg-indigo-600 font-bold py-2 rounded-xl transition text-sm text-indigo-300 hover:text-white">
+                                    <i class="fa-solid fa-pen-to-square mr-1"></i> Take Mock Test
+                                </a>
+                            </div>
                         </div>
-                        <div class="space-y-2">
-                            <a href="mock-test.html" class="block text-center w-full bg-slate-700 hover:bg-yellow-400 hover:text-slate-900 font-bold py-2 rounded-xl transition text-sm">
-                                <i class="fa-solid fa-play mr-1"></i> Lectures & Notes
-                            </a>
-                            <a href="mock-test.html" class="block text-center w-full bg-indigo-600/30 border border-indigo-500/40 hover:bg-indigo-600 font-bold py-2 rounded-xl transition text-sm text-indigo-300 hover:text-white">
-                                <i class="fa-solid fa-pen-to-square mr-1"></i> Take Mock Test
-                            </a>
-                        </div>
-                    </div>
-                `;
-            });
+                    `;
+                });
+            }
         }
 
-        // Load Class 10 by default on page load
         window.onload = function() {
-            showClass(10);
+            const defaultBtn = document.getElementById('default-class-btn');
+            showClass(10, defaultBtn);
         }
     </script>
 
