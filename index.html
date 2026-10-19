@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akash Study App - Class 5 to 10</title>
+    <title>Akash Study App - All Classes & Subjects</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-slate-900 text-white font-sans min-h-screen">
+<body class="bg-slate-900 text-white font-sans min-h-screen pb-16">
 
     <!-- Navigation Bar -->
-    <nav class="bg-slate-800/80 backdrop-blur border-b border-slate-700 px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+    <nav class="bg-slate-800/90 backdrop-blur border-b border-slate-700 px-6 py-4 flex justify-between items-center sticky top-0 z-50 shadow-md">
         <div class="flex items-center space-x-3">
             <div class="bg-yellow-400 text-slate-900 p-2 rounded-xl font-bold">
                 <i class="fa-solid fa-graduation-cap text-xl"></i>
@@ -19,10 +19,10 @@
         </div>
         <div class="space-x-6 hidden md:flex font-medium text-slate-300">
             <a href="#" class="hover:text-yellow-400 transition">Home</a>
-            <a href="#classes" class="hover:text-yellow-400 transition">Classes</a>
+            <a href="#classes-section" class="hover:text-yellow-400 transition">Classes</a>
             <a href="mock-test.html" class="hover:text-yellow-400 transition">Mock Tests</a>
         </div>
-        <button class="bg-yellow-400 text-slate-900 px-5 py-2 rounded-xl font-bold hover:bg-yellow-300 transition">
+        <button class="bg-yellow-400 text-slate-900 px-5 py-2 rounded-xl font-bold hover:bg-yellow-300 transition shadow">
             Dashboard
         </button>
     </nav>
@@ -30,53 +30,127 @@
     <!-- Hero Section -->
     <section class="max-w-6xl mx-auto px-6 py-10 text-center">
         <span class="bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs px-4 py-1.5 rounded-full font-semibold uppercase tracking-widest inline-block mb-4">
-            Class-wise Learning Portal
+            Smart Digital Classroom
         </span>
         <h2 class="text-3xl md:text-5xl font-black mb-4 leading-tight">
-            Class 5 to Class 10 Full Syllabus
+            Select Your Class & Subject
         </h2>
-        <p class="text-slate-400 max-w-2xl mx-auto mb-6">
-            Nijeshsho class select koro ebong sob subject-er Video Lectures, Notes o Mock Tests peye jao.
+        <p class="text-slate-400 max-w-2xl mx-auto mb-8">
+            Class 5 theke Class 10 porjonto protita class-er alada subject-er video lectures, notes ebong mock test ekikhane paabe.
         </p>
+
+        <!-- Class Selection Buttons -->
+        <div id="classes-section" class="flex flex-wrap justify-center gap-3 mb-10">
+            <button onclick="showClass(5)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-slate-800 border border-slate-700 hover:border-yellow-400 transition shadow">Class 5</button>
+            <button onclick="showClass(6)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-slate-800 border border-slate-700 hover:border-yellow-400 transition shadow">Class 6</button>
+            <button onclick="showClass(7)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-slate-800 border border-slate-700 hover:border-yellow-400 transition shadow">Class 7</button>
+            <button onclick="showClass(8)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-slate-800 border border-slate-700 hover:border-yellow-400 transition shadow">Class 8</button>
+            <button onclick="showClass(9)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-slate-800 border border-slate-700 hover:border-yellow-400 transition shadow">Class 9</button>
+            <button onclick="showClass(10)" class="class-btn px-6 py-3 rounded-xl font-bold text-base bg-yellow-400 text-slate-900 border border-yellow-400 transition shadow">Class 10</button>
+        </div>
     </section>
 
-    <!-- Class Wise Subject Section -->
-    <section id="classes" class="max-w-6xl mx-auto px-6 pb-16 space-y-12">
+    <!-- Subjects Container -->
+    <main class="max-w-6xl mx-auto px-6">
+        <h3 id="selected-title" class="text-2xl font-bold text-yellow-400 mb-6 flex items-center gap-2">
+            <i class="fa-solid fa-book-open"></i> Subjects for Class 10
+        </h3>
 
-        <!-- Class 5 & 6 (Primary / Middle) -->
-        <div class="bg-slate-800/60 border border-slate-700 p-6 rounded-2xl">
-            <h3 class="text-2xl font-bold text-yellow-400 mb-6 flex items-center gap-2">
-                <i class="fa-solid fa-shapes"></i> Class 5 & Class 6 Subjects
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
-                    <i class="fa-solid fa-book text-2xl text-amber-400 mb-2"></i>
-                    <h4 class="font-bold">Bengali (বাংলা)</h4>
-                    <p class="text-xs text-slate-400 mt-1">Godyo, Podyo & Vyakaran</p>
-                </div>
-                <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
-                    <i class="fa-solid fa-language text-2xl text-blue-400 mb-2"></i>
-                    <h4 class="font-bold">English</h4>
-                    <p class="text-xs text-slate-400 mt-1">Textbook & Grammar</p>
-                </div>
-                <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
-                    <i class="fa-solid fa-calculator text-2xl text-purple-400 mb-2"></i>
-                    <h4 class="font-bold">Mathematics (গণিত)</h4>
-                    <p class="text-xs text-slate-400 mt-1">Basic Math & Geometry</p>
-                </div>
-                <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
-                    <i class="fa-solid fa-leaf text-2xl text-emerald-400 mb-2"></i>
-                    <h4 class="font-bold">EVS / Science (পরিবেশ ও বিজ্ঞান)</h4>
-                    <p class="text-xs text-slate-400 mt-1">General Science & Nature</p>
-                </div>
-            </div>
+        <!-- Subject Cards Grid -->
+        <div id="subject-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Dynamic content will load here via JavaScript -->
         </div>
+    </main>
 
-        <!-- Class 7 & 8 -->
-        <div class="bg-slate-800/60 border border-slate-700 p-6 rounded-2xl">
-            <h3 class="text-2xl font-bold text-yellow-400 mb-6 flex items-center gap-2">
-                <i class="fa-solid fa-book-open"></i> Class 7 & Class 8 Subjects
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="bg-slate-90
-                
+    <!-- JavaScript for Dynamic Subject Loading -->
+    <script>
+        const subjectData = {
+            5: [
+                {name: "Bengali (বাংলা)", icon: "fa-book", color: "text-amber-400", desc: "Sahitya & Vyakaran"},
+                {name: "English", icon: "fa-language", color: "text-blue-400", desc: "Prose & Grammar"},
+                {name: "Mathematics (গণিত)", icon: "fa-calculator", color: "text-purple-400", desc: "Basic Numbers & Shapes"},
+                {name: "EVS (পরিবেশ ও বিজ্ঞান)", icon: "fa-leaf", color: "text-emerald-400", desc: "Nature & Environment"}
+            ],
+            6: [
+                {name: "Bengali (বাংলা)", icon: "fa-book", color: "text-amber-400", desc: "Moimachar & Kobita"},
+                {name: "English", icon: "fa-language", color: "text-blue-400", desc: "Textbook & Writing"},
+                {name: "Mathematics (গণিত)", icon: "fa-calculator", color: "text-purple-400", desc: "Arithmetic & Geometry"},
+                {name: "Science (বিজ্ঞান)", icon: "fa-flask", color: "text-emerald-400", desc: "General Science Basics"}
+            ],
+            7: [
+                {name: "Environment & Science", icon: "fa-flask", color: "text-emerald-400", desc: "Physics, Chem & Bio"},
+                {name: "Mathematics (গণিত)", icon: "fa-calculator", color: "text-purple-400", desc: "Algebra & Fractions"},
+                {name: "History & Geography", icon: "fa-landmark", color: "text-rose-400", desc: "Ancient & Earth Studies"},
+                {name: "English & Bengali", icon: "fa-language", color: "text-blue-400", desc: "Full Language Course"}
+            ],
+            8: [
+                {name: "Environment & Science", icon: "fa-atom", color: "text-emerald-400", desc: "Advanced Science Concepts"},
+                {name: "Mathematics (গণিত)", icon: "fa-calculator", color: "text-purple-400", desc: "Equations & Geometry"},
+                {name: "History", icon: "fa-landmark", color: "text-rose-400", desc: "Modern History"},
+                {name: "Geography", icon: "fa-globe", color: "text-cyan-400", desc: "Resource & Environment"},
+                {name: "Languages (Bengali/English)", icon: "fa-book-open", color: "text-amber-400", desc: "Literature & Grammar"}
+            ],
+            9: [
+                {name: "Physical Science (ভৌতবিজ্ঞান)", icon: "fa-atom", color: "text-blue-400", desc: "Physics & Chemistry"},
+                {name: "Life Science (জীবনবিজ্ঞান)", icon: "fa-dna", color: "text-emerald-400", desc: "Cell, Plant & Animal Bio"},
+                {name: "Mathematics (গণিত)", icon: "fa-square-root-variable", color: "text-purple-400", desc: "Theorem & Algebra"},
+                {name: "History (ইতিহাস)", icon: "fa-book-atlas", color: "text-rose-400", desc: "French Revolution & Beyond"},
+                {name: "Geography (ভূগোল)", icon: "fa-globe", color: "text-cyan-400", desc: "Planet Earth & India"},
+                {name: "First & Second Language", icon: "fa-language", color: "text-yellow-400", desc: "Bengali & English"}
+            ],
+            10: [
+                {name: "Physical Science (ভৌতবিজ্ঞান)", icon: "fa-atom", color: "text-blue-400", desc: "Thermal Physics, Atom & Organic Chem"},
+                {name: "Life Science (জীবনবিজ্ঞান)", icon: "fa-dna", color: "text-emerald-400", desc: "Control, Heredity & Evolution"},
+                {name: "Mathematics (গণিত)", icon: "fa-square-root-variable", color: "text-purple-400", desc: "Quadratic Equations, Trig & Circle"},
+                {name: "History (ইতিহাস)", icon: "fa-landmark", color: "text-rose-400", desc: "Resistance & Rebellion in India"},
+                {name: "Geography (ভূগোল)", icon: "fa-globe", color: "text-cyan-400", desc: "Endogenic Processes & India Map"},
+                {name: "First & Second Language", icon: "fa-language", color: "text-yellow-400", desc: "Board Syllabus Preparation"}
+            ]
+        };
+
+        function showClass(classNum) {
+            // Update active button styles
+            document.querySelectorAll('.class-btn').forEach(btn => {
+                btn.classList.remove('bg-yellow-400', 'text-slate-900', 'border-yellow-400');
+                btn.classList.add('bg-slate-800', 'text-white', 'border-slate-700');
+            });
+            event.target.classList.remove('bg-slate-800', 'text-white', 'border-slate-700');
+            event.target.classList.add('bg-yellow-400', 'text-slate-900', 'border-yellow-400');
+
+            // Update Title
+            document.getElementById('selected-title.innerHTML').innerHTML = `<i class="fa-solid fa-book-open"></i> Subjects for Class ${classNum}`;
+
+            // Render Subjects
+            const grid = document.getElementById('subject-grid');
+            grid.innerHTML = '';
+            
+            subjectData[classNum].forEach(sub => {
+                grid.innerHTML += `
+                    <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 hover:border-yellow-400 transition shadow-lg flex flex-col justify-between">
+                        <div>
+                            <i class="fa-solid ${sub.icon} text-4xl ${sub.color} mb-3"></i>
+                            <h4 class="font-bold text-xl mb-1">${sub.name}</h4>
+                            <p class="text-xs text-slate-400 mb-6">${sub.desc}</p>
+                        </div>
+                        <div class="space-y-2">
+                            <a href="mock-test.html" class="block text-center w-full bg-slate-700 hover:bg-yellow-400 hover:text-slate-900 font-bold py-2 rounded-xl transition text-sm">
+                                <i class="fa-solid fa-play mr-1"></i> Lectures & Notes
+                            </a>
+                            <a href="mock-test.html" class="block text-center w-full bg-indigo-600/30 border border-indigo-500/40 hover:bg-indigo-600 font-bold py-2 rounded-xl transition text-sm text-indigo-300 hover:text-white">
+                                <i class="fa-solid fa-pen-to-square mr-1"></i> Take Mock Test
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Load Class 10 by default on page load
+        window.onload = function() {
+            showClass(10);
+        }
+    </script>
+
+</body>
+    </html>
+    
