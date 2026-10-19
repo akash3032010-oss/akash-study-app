@@ -3,118 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physics Mock Test - Akash Study App</title>
+    <title>Akash Study App - Class 5 to 10</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-slate-900 text-white font-sans min-h-screen flex flex-col">
+<body class="bg-slate-900 text-white font-sans min-h-screen">
 
-    <!-- Top Header -->
-    <header class="bg-slate-800 border-b border-slate-700 px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-slate-800/80 backdrop-blur border-b border-slate-700 px-6 py-4 flex justify-between items-center sticky top-0 z-50">
         <div class="flex items-center space-x-3">
-            <span class="bg-yellow-400 text-slate-900 font-bold px-3 py-1 rounded-lg text-sm">TEST MODE</span>
-            <h1 class="text-lg font-bold">Physics Mock Test - Chapter 1</h1>
+            <div class="bg-yellow-400 text-slate-900 p-2 rounded-xl font-bold">
+                <i class="fa-solid fa-graduation-cap text-xl"></i>
+            </div>
+            <h1 class="text-xl font-extrabold tracking-wide text-yellow-400">Akash Study App</h1>
         </div>
-        <!-- Live Timer -->
-        <div class="bg-slate-900 border border-slate-700 px-4 py-2 rounded-xl flex items-center space-x-2">
-            <i class="fa-regular fa-clock text-yellow-400 animate-pulse"></i>
-            <span id="timer" class="font-mono text-xl font-bold text-yellow-400">10:00</span>
+        <div class="space-x-6 hidden md:flex font-medium text-slate-300">
+            <a href="#" class="hover:text-yellow-400 transition">Home</a>
+            <a href="#classes" class="hover:text-yellow-400 transition">Classes</a>
+            <a href="mock-test.html" class="hover:text-yellow-400 transition">Mock Tests</a>
         </div>
-    </header>
+        <button class="bg-yellow-400 text-slate-900 px-5 py-2 rounded-xl font-bold hover:bg-yellow-300 transition">
+            Dashboard
+        </button>
+    </nav>
 
-    <!-- Main Test Area -->
-    <main class="flex-1 max-w-6xl w-full mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 py-10 text-center">
+        <span class="bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs px-4 py-1.5 rounded-full font-semibold uppercase tracking-widest inline-block mb-4">
+            Class-wise Learning Portal
+        </span>
+        <h2 class="text-3xl md:text-5xl font-black mb-4 leading-tight">
+            Class 5 to Class 10 Full Syllabus
+        </h2>
+        <p class="text-slate-400 max-w-2xl mx-auto mb-6">
+            Nijeshsho class select koro ebong sob subject-er Video Lectures, Notes o Mock Tests peye jao.
+        </p>
+    </section>
 
-        <!-- Question Box (Left 2 Columns) -->
-        <div class="lg:col-span-2 bg-slate-800/80 border border-slate-700 rounded-2xl p-6 flex flex-col justify-between">
-            <div>
-                <!-- Question Number & Tag -->
-                <div class="flex justify-between items-center mb-4">
-                    <span class="text-xs font-semibold text-indigo-400 uppercase tracking-widest">Question 1 of 5</span>
-                    <span class="text-xs bg-slate-700 px-3 py-1 rounded-full text-slate-300">+4 Marks / -1 Mark</span>
+    <!-- Class Wise Subject Section -->
+    <section id="classes" class="max-w-6xl mx-auto px-6 pb-16 space-y-12">
+
+        <!-- Class 5 & 6 (Primary / Middle) -->
+        <div class="bg-slate-800/60 border border-slate-700 p-6 rounded-2xl">
+            <h3 class="text-2xl font-bold text-yellow-400 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-shapes"></i> Class 5 & Class 6 Subjects
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
+                    <i class="fa-solid fa-book text-2xl text-amber-400 mb-2"></i>
+                    <h4 class="font-bold">Bengali (বাংলা)</h4>
+                    <p class="text-xs text-slate-400 mt-1">Godyo, Podyo & Vyakaran</p>
                 </div>
-
-                <!-- Question Text -->
-                <h2 class="text-xl font-semibold mb-6 text-slate-100">
-                    What is the SI unit of Force?
-                </h2>
-
-                <!-- Options List -->
-                <div class="space-y-3">
-                    <button onclick="selectOption(this)" class="option-btn w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-900/50 hover:border-yellow-400 hover:bg-slate-800 transition flex items-center space-x-3">
-                        <span class="w-8 h-8 rounded-full border border-slate-600 flex items-center justify-center text-sm font-bold">A</span>
-                        <span>Joule</span>
-                    </button>
-                    <button onclick="selectOption(this)" class="option-btn w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-900/50 hover:border-yellow-400 hover:bg-slate-800 transition flex items-center space-x-3">
-                        <span class="w-8 h-8 rounded-full border border-slate-600 flex items-center justify-center text-sm font-bold">B</span>
-                        <span>Newton</span>
-                    </button>
-                    <button onclick="selectOption(this)" class="option-btn w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-900/50 hover:border-yellow-400 hover:bg-slate-800 transition flex items-center space-x-3">
-                        <span class="w-8 h-8 rounded-full border border-slate-600 flex items-center justify-center text-sm font-bold">C</span>
-                        <span>Watt</span>
-                    </button>
-                    <button onclick="selectOption(this)" class="option-btn w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-900/50 hover:border-yellow-400 hover:bg-slate-800 transition flex items-center space-x-3">
-                        <span class="w-8 h-8 rounded-full border border-slate-600 flex items-center justify-center text-sm font-bold">D</span>
-                        <span>Pascal</span>
-                    </button>
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
+                    <i class="fa-solid fa-language text-2xl text-blue-400 mb-2"></i>
+                    <h4 class="font-bold">English</h4>
+                    <p class="text-xs text-slate-400 mt-1">Textbook & Grammar</p>
+                </div>
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
+                    <i class="fa-solid fa-calculator text-2xl text-purple-400 mb-2"></i>
+                    <h4 class="font-bold">Mathematics (গণিত)</h4>
+                    <p class="text-xs text-slate-400 mt-1">Basic Math & Geometry</p>
+                </div>
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
+                    <i class="fa-solid fa-leaf text-2xl text-emerald-400 mb-2"></i>
+                    <h4 class="font-bold">EVS / Science (পরিবেশ ও বিজ্ঞান)</h4>
+                    <p class="text-xs text-slate-400 mt-1">General Science & Nature</p>
                 </div>
             </div>
-
-            <!-- Action Buttons -->
-            <div class="flex justify-between items-center mt-8 pt-4 border-t border-slate-700">
-                <button class="px-5 py-2.5 rounded-xl border border-slate-600 text-slate-300 hover:bg-slate-700 transition">
-                    Previous
-                </button>
-                <button class="px-6 py-2.5 rounded-xl bg-yellow-400 text-slate-900 font-bold hover:bg-yellow-300 transition">
-                    Next Question
-                </button>
-            </div>
         </div>
 
-        <!-- Question Palette / Overview (Right 1 Column) -->
-        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 flex flex-col justify-between">
-            <div>
-                <h3 class="font-bold text-lg mb-4 text-slate-200">Question Status</h3>
+        <!-- Class 7 & 8 -->
+        <div class="bg-slate-800/60 border border-slate-700 p-6 rounded-2xl">
+            <h3 class="text-2xl font-bold text-yellow-400 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-book-open"></i> Class 7 & Class 8 Subjects
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-slate-90
                 
-                <!-- Status Grid -->
-                <div class="grid grid-cols-5 gap-3 mb-6">
-                    <button class="w-10 h-10 rounded-lg bg-yellow-400 text-slate-900 font-bold">1</button>
-                    <button class="w-10 h-10 rounded-lg bg-slate-700 hover:bg-slate-600 font-bold">2</button>
-                    <button class="w-10 h-10 rounded-lg bg-slate-700 hover:bg-slate-600 font-bold">3</button>
-                    <button class="w-10 h-10 rounded-lg bg-slate-700 hover:bg-slate-600 font-bold">4</button>
-                    <button class="w-10 h-10 rounded-lg bg-slate-700 hover:bg-slate-600 font-bold">5</button>
-                </div>
-
-                <!-- Legend -->
-                <div class="space-y-2 text-xs text-slate-400 border-t border-slate-700 pt-4">
-                    <div class="flex items-center space-x-2">
-                        <span class="w-3 h-3 rounded-full bg-yellow-400 inline-block"></span>
-                        <span>Current / Answered</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <span class="w-3 h-3 rounded-full bg-slate-700 inline-block"></span>
-                        <span>Not Answered</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Submit Test Button -->
-            <button class="w-full mt-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold rounded-xl shadow-lg transition">
-                Submit Test
-            </button>
-        </div>
-
-    </main>
-
-    <!-- Simple JS for selection -->
-    <script>
-        function selectOption(element) {
-            document.querySelectorAll('.option-btn').forEach(btn => {
-                btn.classList.remove('border-yellow-400', 'bg-yellow-400/10');
-            });
-            element.classList.add('border-yellow-400', 'bg-yellow-400/10');
-        }
-    </script>
-</body>
-                </html>
-            
