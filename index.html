@@ -36,10 +36,10 @@
             </div>
             
             <!-- View Test Button -->
-            <button onclick="window.location.href='chapters.html'" class="w-full bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-sm transition-all duration-200 cursor-pointer">
+            <a href="chapters.html" class="w-full bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-sm transition-all duration-200 cursor-pointer block text-center">
                 <span>View Test</span>
                 <i class="fa-solid fa-chevron-right text-xs"></i>
-            </button>
+            </a>
         </div>
 
         <!-- Free Mock Test Section -->
@@ -52,20 +52,20 @@
 
             <!-- Features Grid -->
             <div class="grid grid-cols-3 gap-2 text-center pt-2">
-                <div onclick="window.location.href='chapters.html'" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
+                <a href="chapters.html" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
                     <i class="fa-solid fa-book-bookmark text-emerald-400 text-lg mb-1"></i>
                     <p class="text-[10px] font-bold text-gray-300">All Subjects</p>
-                </div>
+                </a>
                 
-                <div onclick="window.location.href='chapters.html'" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
+                <a href="chapters.html" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
                     <i class="fa-solid fa-layer-group text-emerald-400 text-lg mb-1"></i>
                     <p class="text-[10px] font-bold text-gray-300">All Chapters</p>
-                </div>
+                </a>
                 
-                <div onclick="window.location.href='chapters.html'" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
+                <a href="chapters.html" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
                     <i class="fa-solid fa-infinity text-emerald-400 text-lg mb-1"></i>
                     <p class="text-[10px] font-bold text-gray-300">Unlimited</p>
-                </div>
+                </a>
             </div>
         </div>
 
@@ -100,17 +100,6 @@
         </a>
     </nav>
 
-    <!-- Script to remove Netlify badge/disturbance automatically -->
-    <script>
-        setInterval(() => {
-            const elements = document.querySelectorAll('iframe, a');
-            elements.forEach(el => {
-                if ((el.src && el.src.includes('netlify')) || (el.href && el.href.includes('netlify'))) {
-                    el.remove();
-                }
-            });
-        }, 100);
-    </script>
 </body>
-                    </html>
+    </html>
     
