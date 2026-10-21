@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Akash Study App</title>
+  <title>Courses - Study App</title>
   <style>
     * {
       box-sizing: border-box;
@@ -15,7 +15,7 @@
       background-color: #0b0f19;
       color: #ffffff;
       padding: 15px;
-      padding-bottom: 80px;
+      padding-bottom: 90px;
     }
     .top-header {
       display: flex;
@@ -24,7 +24,7 @@
       margin-bottom: 20px;
     }
     .courses-heading {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: bold;
       font-family: Georgia, serif;
     }
@@ -33,14 +33,146 @@
       color: #fff;
     }
 
-    /* Class Section Styling */
-    .section-title {
-      font-size: 18px;
-      color: #f59e0b;
-      margin: 20px 0 10px 0;
-      border-bottom: 1px solid #1e293b;
-      padding-bottom: 5px;
+    /* Top Offer Banner */
+    .top-card {
+      background-color: #131b2e;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 20px;
     }
+    .top-card-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .step-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .step-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .step-circle.active {
+      background-color: #2e3a59;
+      color: #fff;
+    }
+    .step-line {
+      height: 2px;
+      width: 70px;
+      background-color: #1e293b;
+    }
+    .step-status {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    /* Course Cards */
+    .course-card {
+      background-color: #131b2e;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .course-top-info {
+      font-size: 13px;
+      color: #f59e0b;
+      margin-bottom: 4px;
+    }
+    .course-main-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .course-title {
+      color: #f59e0b;
+      font-size: 22px;
+      font-weight: 800;
+      margin: 4px 0;
+      text-transform: uppercase;
+    }
+    .stars {
+      color: #f59e0b;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+    .author-name {
+      color: #94a3b8;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    .sub-title {
+      color: #60a5fa;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+    .badge-offer {
+      background-color: rgba(239, 68, 68, 0.15);
+      color: #ef4444;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* Locked Button Style */
+    .btn-locked {
+      background-color: #1e293b;
+      color: #ffffff;
+      border: 1px solid #334155;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-locked:hover {
+      background-color: #2a364f;
+    }
+    .unlocked-badge {
+      background-color: #10b981;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* Section Pages (Home / Test / Dashboard) */
+    .page-section {
+      display: none;
+    }
+    .page-section.active-section {
+      display: block;
+    }
+
+    /* Class Cards for Home Section */
     .class-card {
       background-color: #131b2e;
       border: 1px solid #1e293b;
@@ -49,7 +181,7 @@
       margin-bottom: 15px;
     }
     .class-title {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: bold;
       color: #60a5fa;
       margin-bottom: 10px;
@@ -57,7 +189,7 @@
     .subject-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      gap: 8px;
     }
     .subject-btn {
       background-color: #1e293b;
@@ -65,14 +197,69 @@
       border: 1px solid #334155;
       padding: 8px;
       border-radius: 8px;
-      font-size: 13px;
+      font-size: 12px;
       text-align: center;
       text-decoration: none;
       display: block;
     }
-    .subject-btn:hover {
+
+    /* Payment Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background-color: #131b2e;
+      border: 1px solid #1e293b;
+      padding: 24px;
+      border-radius: 16px;
+      text-align: center;
+      max-width: 350px;
+      width: 90%;
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      font-size: 22px;
+      cursor: pointer;
+      color: #94a3b8;
+    }
+    .qr-img {
+      width: 190px;
+      height: 190px;
+      margin: 12px 0;
+      border-radius: 10px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: 1px solid #1e293b;
+      background-color: #0b0f19;
+      color: white;
+      text-align: center;
+      font-size: 13px;
+    }
+    .btn-submit {
       background-color: #2563eb;
-      color: #fff;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      width: 100%;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     /* Bottom Navigation Bar */
@@ -91,12 +278,15 @@
     }
     .nav-item {
       color: #64748b;
-      text-decoration: none;
       font-size: 11px;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 3px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      width: 25%;
     }
     .nav-item.active {
       color: #60a5fa;
@@ -104,115 +294,269 @@
     .nav-icon {
       font-size: 18px;
     }
+    .active-pill {
+      background-color: #1e293b;
+      padding: 4px 16px;
+      border-radius: 20px;
+    }
   </style>
 </head>
 <body>
 
+  <!-- Top Header -->
   <div class="top-header">
-    <div class="courses-heading">Akash Study App</div>
+    <div class="courses-heading" id="headerTitle">Courses</div>
     <div class="menu-icon">☰</div>
   </div>
 
-  <h2 class="section-title">Select Your Class & Subject</h2>
+  <!-- SECTION 1: HOME PAGE (Class 5 to 10 & Subjects) -->
+  <div id="section-home" class="page-section">
+    <h3 style="color: #f59e0b; margin-bottom: 15px;">Select Class & Subject</h3>
+    
+    <!-- Class 5 -->
+    <div class="class-card">
+      <div class="class-title">Class 5</div>
+      <div class="subject-grid">
+        <a href="bangla.html" class="subject-btn">Bengali</a>
+        <a href="english.html" class="subject-btn">English</a>
+        <a href="math.html" class="subject-btn">Mathematics</a>
+        <a href="science.html" class="subject-btn">EVS</a>
+      </div>
+    </div>
 
-  <!-- Class 5 -->
-  <div class="class-card">
-    <div class="class-title">Class 5</div>
-    <div class="subject-grid">
-      <a href="bangla.html" class="subject-btn">Bengali</a>
-      <a href="english.html" class="subject-btn">English</a>
-      <a href="math.html" class="subject-btn">Mathematics</a>
-      <a href="science.html" class="subject-btn">Environmental Science</a>
+    <!-- Class 6 -->
+    <div class="class-card">
+      <div class="class-title">Class 6</div>
+      <div class="subject-grid">
+        <a href="bangla.html" class="subject-btn">Bengali</a>
+        <a href="english.html" class="subject-btn">English</a>
+        <a href="math.html" class="subject-btn">Math</a>
+        <a href="science.html" class="subject-btn">Science</a>
+        <a href="history.html" class="subject-btn">History</a>
+        <a href="geography.html" class="subject-btn">Geography</a>
+      </div>
+    </div>
+
+    <!-- Class 7 -->
+    <div class="class-card">
+      <div class="class-title">Class 7</div>
+      <div class="subject-grid">
+        <a href="bangla.html" class="subject-btn">Bengali</a>
+        <a href="english.html" class="subject-btn">English</a>
+        <a href="math.html" class="subject-btn">Math</a>
+        <a href="science.html" class="subject-btn">Science</a>
+        <a href="history.html" class="subject-btn">History</a>
+        <a href="geography.html" class="subject-btn">Geography</a>
+      </div>
+    </div>
+
+    <!-- Class 8 -->
+    <div class="class-card">
+      <div class="class-title">Class 8</div>
+      <div class="subject-grid">
+        <a href="bangla.html" class="subject-btn">Bengali</a>
+        <a href="english.html" class="subject-btn">English</a>
+        <a href="math.html" class="subject-btn">Math</a>
+        <a href="science.html" class="subject-btn">Science</a>
+        <a href="history.html" class="subject-btn">History</a>
+        <a href="geography.html" class="subject-btn">Geography</a>
+      </div>
+    </div>
+
+    <!-- Class 9 -->
+    <div class="class-card">
+      <div class="class-title">Class 9</div>
+      <div class="subject-grid">
+        <a href="bangla.html" class="subject-btn">Bengali</a>
+        <a href="english.html" class="subject-btn">English</a>
+        <a href="math.html" class="subject-btn">Math</a>
+        <a href="science.html" class="subject-btn">Physical Science</a>
+        <a href="science.html" class="subject-btn">Life Science</a>
+        <a href="history.html" class="subject-btn">History</a>
+        <a href="geography.html" class="subject-btn">Geography</a>
+      </div>
+    </div>
+
+    <!-- Class 10 -->
+    <div class="class-card">
+      <div class="class-title">Class 10 (Madhyamik)</div>
+      <div class="subject-grid">
+        <a href="bangla.html" class="subject-btn">Bengali</a>
+        <a href="english.html" class="subject-btn">English</a>
+        <a href="math.html" class="subject-btn">Math</a>
+        <a href="science.html" class="subject-btn">Physical Science</a>
+        <a href="science.html" class="subject-btn">Life Science</a>
+        <a href="history.html" class="subject-btn">History</a>
+        <a href="geography.html" class="subject-btn">Geography</a>
+      </div>
     </div>
   </div>
 
-  <!-- Class 6 -->
-  <div class="class-card">
-    <div class="class-title">Class 6</div>
-    <div class="subject-grid">
-      <a href="bangla.html" class="subject-btn">Bengali</a>
-      <a href="english.html" class="subject-btn">English</a>
-      <a href="math.html" class="subject-btn">Mathematics</a>
-      <a href="science.html" class="subject-btn">Science</a>
-      <a href="history.html" class="subject-btn">History</a>
-      <a href="geography.html" class="subject-btn">Geography</a>
+  <!-- SECTION 2: COURSES PAGE (Your Exact UI) -->
+  <div id="section-courses" class="page-section active-section">
+    <!-- Top Offer Banner -->
+    <div class="top-card">
+      <div class="top-card-title">Join 2 Courses, Get Premium Mock Test for Free 🎉</div>
+      <div class="step-indicator">
+        <div class="step-circle active">1</div>
+        <div class="step-line"></div>
+        <div class="step-circle">2</div>
+      </div>
+      <div class="step-status">0/2 Courses Completed</div>
+    </div>
+
+    <!-- Course 1: First Division (Spoken English / ₹499) -->
+    <div class="course-card">
+      <div class="course-top-info">মাধ্যমিক ২০২৭</div>
+      <div class="course-main-row">
+        <div>
+          <div class="course-title">FIRST DIVISION</div>
+          <div class="author-name">- by Akash Study App</div>
+        </div>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="sub-title">Guarantee Course</div>
+      <div class="card-footer">
+        <div class="badge-offer">🔥 40% OFF 13:50:27</div>
+        <div id="action-spoken">
+          <button class="btn-locked" onclick="openPaymentModal('First Division Course (Spoken)', 499)">🔒 Locked</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course 2: English Champion Batch (Grammar / ₹299) -->
+    <div class="course-card">
+      <div class="course-top-info">মাধ্যমিক ২০২৭</div>
+      <div class="course-main-row">
+        <div>
+          <div class="course-title">ENGLISH</div>
+          <div class="author-name">- by Akash Study App</div>
+        </div>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="sub-title" style="color: #10b981;">CHAMPION BATCH</div>
+      <div class="card-footer">
+        <div style="font-size: 13px; color: #94a3b8;">Zero to Hero in Madhyamik</div>
+        <div id="action-grammar">
+          <button class="btn-locked" onclick="openPaymentModal('English Champion Batch (Grammar)', 299)">🔒 Locked</button>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Class 7 -->
-  <div class="class-card">
-    <div class="class-title">Class 7</div>
-    <div class="subject-grid">
-      <a href="bangla.html" class="subject-btn">Bengali</a>
-      <a href="english.html" class="subject-btn">English</a>
-      <a href="math.html" class="subject-btn">Mathematics</a>
-      <a href="science.html" class="subject-btn">Science</a>
-      <a href="history.html" class="subject-btn">History</a>
-      <a href="geography.html" class="subject-btn">Geography</a>
+  <!-- SECTION 3: TEST PAGE -->
+  <div id="section-test" class="page-section" style="text-align: center; padding: 40px 0;">
+    <h3>📝 Mock Tests Coming Soon!</h3>
+  </div>
+
+  <!-- SECTION 4: DASHBOARD PAGE -->
+  <div id="section-dashboard" class="page-section" style="text-align: center; padding: 40px 0;">
+    <h3>👤 User Dashboard</h3>
+    <p style="color: #94a3b8; margin-top: 10px;">Your enrolled courses will appear here.</p>
+  </div>
+
+  <!-- Payment Modal -->
+  <div id="paymentModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle" style="color: #f59e0b; font-size: 18px;">Course Name</h3>
+      <p style="margin: 6px 0; font-size: 14px;">Price: <b id="modalPrice" style="color: #10b981;">₹0</b></p>
+      
+      <!-- PhonePe QR Code Image Link -->
+      <img src="your-phonepe-qr.png" alt="PhonePe QR Code" class="qr-img" />
+      <p style="font-size: 11px; color: #94a3b8; margin-bottom: 10px;">Scan & Pay using PhonePe / UPI App</p>
+
+      <input type="text" id="txnId" placeholder="Enter Transaction ID / UTR" />
+      <button class="btn-submit" onclick="verifyAndUnlock()">Submit & Unlock</button>
     </div>
   </div>
 
-  <!-- Class 8 -->
-  <div class="class-card">
-    <div class="class-title">Class 8</div>
-    <div class="subject-grid">
-      <a href="bangla.html" class="subject-btn">Bengali</a>
-      <a href="english.html" class="subject-btn">English</a>
-      <a href="math.html" class="subject-btn">Mathematics</a>
-      <a href="science.html" class="subject-btn">Science</a>
-      <a href="history.html" class="subject-btn">History</a>
-      <a href="geography.html" class="subject-btn">Geography</a>
-    </div>
-  </div>
-
-  <!-- Class 9 -->
-  <div class="class-card">
-    <div class="class-title">Class 9</div>
-    <div class="subject-grid">
-      <a href="bangla.html" class="subject-btn">Bengali</a>
-      <a href="english.html" class="subject-btn">English</a>
-      <a href="math.html" class="subject-btn">Mathematics</a>
-      <a href="science.html" class="subject-btn">Physical Science</a>
-      <a href="science.html" class="subject-btn">Life Science</a>
-      <a href="history.html" class="subject-btn">History</a>
-      <a href="geography.html" class="subject-btn">Geography</a>
-    </div>
-  </div>
-
-  <!-- Class 10 (Madhyamik) -->
-  <div class="class-card">
-    <div class="class-title">Class 10 (Madhyamik)</div>
-    <div class="subject-grid">
-      <a href="bangla.html" class="subject-btn">Bengali</a>
-      <a href="english.html" class="subject-btn">English</a>
-      <a href="math.html" class="subject-btn">Mathematics</a>
-      <a href="science.html" class="subject-btn">Physical Science</a>
-      <a href="science.html" class="subject-btn">Life Science</a>
-      <a href="history.html" class="subject-btn">History</a>
-      <a href="geography.html" class="subject-btn">Geography</a>
-    </div>
-  </div>
-
-  <!-- Bottom Navigation Bar -->
+  <!-- Bottom Navigation Bar (Home, Courses, Test, Dashboard) -->
   <div class="bottom-nav">
-    <a href="index.html" class="nav-item active">
+    <button class="nav-item" id="nav-home" onclick="showTab('home')">
       <span class="nav-icon">🏠</span>
       <span>Home</span>
-    </a>
-    <a href="chapters.html" class="nav-item">
-      <span class="nav-icon">🎓</span>
-      <span>Courses</span>
-    </a>
-    <a href="test.html" class="nav-item">
-      <span class="nav-icon">📄</span>
+    </button>
+    <button class="nav-item active" id="nav-courses" onclick="showTab('courses')">
+      <span class="nav-icon active-pill">🎓</span>
+      <span style="color:#60a5fa; font-weight:bold;">Courses</span>
+    </button>
+    <button class="nav-item" id="nav-test" onclick="showTab('test')">
+      <span class="nav-icon">📋</span>
       <span>Test</span>
-    </a>
-    <a href="dashboard.html" class="nav-item">
+    </button>
+    <button class="nav-item" id="nav-dashboard" onclick="showTab('dashboard')">
       <span class="nav-icon">👤</span>
       <span>Dashboard</span>
-    </a>
+    </button>
   </div>
 
+  <script>
+    let selectedCourse = "";
+
+    window.onload = function() {
+      checkStatus();
+    };
+
+    // Tab Switching Function (Home / Courses / Test / Dashboard)
+    function showTab(tabName) {
+      document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active-section'));
+      document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+
+      if(tabName === 'home') {
+        document.getElementById('section-home').classList.add('active-section');
+        document.getElementById('nav-home').classList.add('active');
+        document.getElementById('headerTitle').innerText = "Akash Study App";
+      } else if(tabName === 'courses') {
+        document.getElementById('section-courses').classList.add('active-section');
+        document.getElementById('nav-courses').classList.add('active');
+        document.getElementById('headerTitle').innerText = "Courses";
+      } else if(tabName === 'test') {
+        document.getElementById('section-test').classList.add('active-section');
+        document.getElementById('nav-test').classList.add('active');
+        document.getElementById('headerTitle').innerText = "Test Series";
+      } else if(tabName === 'dashboard') {
+        document.getElementById('section-dashboard').classList.add('active-section');
+        document.getElementById('nav-dashboard').classList.add('active');
+        document.getElementById('headerTitle').innerText = "Dashboard";
+      }
+    }
+
+    function checkStatus() {
+      if (localStorage.getItem("unlocked_First Division Course (Spoken)") === "true") {
+        document.getElementById("action-spoken").innerHTML = '<div class="unlocked-badge">🔓 Unlocked</div>';
+      }
+      if (localStorage.getItem("unlocked_English Champion Batch (Grammar)") === "true") {
+        document.getElementById("action-grammar").innerHTML = '<div class="unlocked-badge">🔓 Unlocked</div>';
+      }
+    }
+
+    function openPaymentModal(courseName, price) {
+      selectedCourse = courseName;
+      document.getElementById("modalTitle").innerText = courseName;
+      document.getElementById("modalPrice").innerText = "₹" + price;
+      document.getElementById("paymentModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("paymentModal").style.display = "none";
+      document.getElementById("txnId").value = "";
+    }
+
+    function verifyAndUnlock() {
+      const txnId = document.getElementById("txnId").value.trim();
+      if (txnId === "") {
+        alert("Daya kore Transaction ID din!");
+        return;
+      }
+
+      localStorage.setItem("unlocked_" + selectedCourse, "true");
+      alert("Course successfully unlocked!");
+      closeModal();
+      checkStatus();
+    }
+  </script>
+
 </body>
-  </html>
+          </html>
         
