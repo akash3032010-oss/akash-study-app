@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests - Safollo App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#121212] text-white font-sans min-h-screen pb-28">
+
+    <!-- Top Header -->
+    <header class="flex justify-between items-center px-5 py-4 border-b border-gray-800/60">
+        <h1 class="text-2xl font-bold font-serif tracking-wide text-gray-100">All Tests</h1>
+        <button class="text-xl text-gray-300 hover:text-white cursor-pointer">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <main class="p-4 space-y-4 max-w-md mx-auto">
+
+        <!-- Available Tests Section -->
+        <div class="space-y-3">
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-wider">Select Subject to Test</h2>
+
+            <!-- Bangla Test Card -->
+            <div class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-blue-500/50 transition">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-400 text-xl border border-blue-500/30">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-100">Bangla Mock Test</h3>
+                        <p class="text-xs text-gray-400">10 Questions • 10 Marks</p>
+                    </div>
+                </div>
+                <button onclick="window.location.href='bangla.html'" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition cursor-pointer">
+                    Start
+                </button>
+            </div>
+
+            <!-- English Test Card -->
+            <div class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-blue-500/50 transition">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-emerald-600/20 rounded-xl flex items-center justify-center text-emerald-400 text-xl border border-emerald-500/30">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-100">English Mock Test</h3>
+                        <p class="text-xs text-gray-400">10 Questions • 10 Marks</p>
+                    </div>
+                </div>
+                <button onclick="window.location.href='english.html'" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition cursor-pointer">
+                    Start
+                </button>
+            </div>
+
+            <!-- Math Test Card -->
+            <div class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-blue-500/50 transition">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-amber-600/20 rounded-xl flex items-center justify-center text-amber-400 text-xl border border-amber-500/30">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-100">Math Mock Test</h3>
+                        <p class="text-xs text-gray-400">10 Questions • 10 Marks</p>
+                    </div>
+                </div>
+                <button onclick="window.location.href='math.html'" class="bg-amber-600 hover
+  
