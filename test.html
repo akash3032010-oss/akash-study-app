@@ -66,5 +66,60 @@
                         <p class="text-xs text-gray-400">10 Questions • 10 Marks</p>
                     </div>
                 </div>
-                <button onclick="window.location.href='math.html'" class="bg-amber-600 hover
-  
+                <button onclick="window.location.href='math.html'" class="bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition cursor-pointer">
+                    Start
+                </button>
+            </div>
+
+            <!-- Science Test Card -->
+            <div class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-blue-500/50 transition">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-purple-600/20 rounded-xl flex items-center justify-center text-purple-400 text-xl border border-purple-500/30">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-100">Science Mock Test</h3>
+                        <p class="text-xs text-gray-400">10 Questions • 10 Marks</p>
+                    </div>
+                </div>
+                <button onclick="window.location.href='science.html'" class="bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition cursor-pointer">
+                    Start
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-[#181818]/95 backdrop-blur-md border-t border-gray-800/80 py-2 px-6 flex justify-between items-center max-w-md mx-auto z-[9999]">
+        <!-- Home Link (Fixed with ./index.html) -->
+        <a href="./index.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
+            <i class="fa-solid fa-house text-lg"></i>
+            <span>Home</span>
+        </a>
+
+        <!-- Courses Link -->
+        <a href="chapters.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
+            <i class="fa-solid fa-graduation-cap text-lg"></i>
+            <span>Courses</span>
+        </a>
+
+        <!-- Test Link (Active) -->
+        <a href="test.html" class="flex flex-col items-center text-blue-400 text-xs gap-1 cursor-pointer">
+            <div class="bg-blue-200/20 px-4 py-1 rounded-full flex items-center justify-center">
+                <i class="fa-solid fa-clipboard-list text-lg text-blue-400"></i>
+            </div>
+            <span class="font-semibold">Test</span>
+        </a>
+
+        <!-- Dashboard Link -->
+        <a href="dashboard.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
+            <i class="fa-solid fa-circle-user text-lg"></i>
+            <span>Dashboard</span>
+        </a>
+    </nav>
+
+</body>
+    </html>
+                        
