@@ -10,7 +10,7 @@
       background-color: #0f172a;
       color: #ffffff;
       margin: 0;
-      padding: 20px;
+      padding: 20px 20px 80px 20px; /* Bottom nav er jonno padding-bottom */
     }
     h1 {
       text-align: center;
@@ -76,6 +76,7 @@
       background-color: rgba(0, 0, 0, 0.8);
       justify-content: center;
       align-items: center;
+      z-index: 1000;
     }
     .modal-content {
       background-color: #1e293b;
@@ -109,6 +110,32 @@
       background-color: #0f172a;
       color: white;
       text-align: center;
+    }
+
+    /* Bottom Navigation Styling */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #1e293b;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 1px solid #334155;
+      z-index: 999;
+    }
+    .nav-item {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .nav-item.active {
+      color: #2563eb;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -147,8 +174,7 @@
       <h3 id="modalTitle">Course Name</h3>
       <p style="margin: 5px 0;">Payable Amount: <b id="modalPrice" style="color: #10b981;">₹0</b></p>
       
-      <!-- PhonePe QR Code Image -->
-      <!-- 'your-phonepe-qr.png' er jaygay aapnar QR code image er link/path boshye din -->
+      <!-- IMPORTANT: Change 'your-phonepe-qr.png' to your uploaded image path -->
       <img src="your-phonepe-qr.png" alt="PhonePe QR Code" class="qr-img" />
       <p style="font-size: 13px; color: #94a3b8;">Scan & Pay using PhonePe / Any UPI App</p>
 
@@ -157,10 +183,19 @@
     </div>
   </div>
 
+  <!-- Bottom Navigation Bar -->
+  <div class="bottom-nav">
+    <a href="index.html" class="nav-item">
+      <span>🏠 Home</span>
+    </a>
+    <a href="english.html" class="nav-item active">
+      <span>🎓 Courses</span>
+    </a>
+  </div>
+
   <script>
     let selectedCourse = "";
 
-    // Load hobar por dekha hobe kon kon course unlock ache
     window.onload = function() {
       checkStatus();
     };
@@ -193,7 +228,6 @@
         return;
       }
 
-      // Save unlock status in local storage
       localStorage.setItem("unlocked_" + selectedCourse, "true");
       alert(selectedCourse + " Course successfully unlock hoye gechhe!");
       
@@ -203,5 +237,5 @@
   </script>
 
 </body>
-                                </html>
-    
+  </html>
+  
