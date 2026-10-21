@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Content - PW Style</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+    body { background-color: #0f172a; color: white; padding: 20px; }
+    
+    .header { background: #1e293b; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
+    .header h2 { color: #facc15; }
+
+    /* Video Player Box */
+    .video-container { background: #000; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 20px; }
+    iframe { width: 100%; height: 220px; border: none; }
+
+    /* Tab Menu (Lectures, Notes, Test) */
+    .tab-menu { display: flex; gap: 10px; margin-bottom: 20px; }
+    .tab-btn { flex: 1; padding: 12px; background: #334155; border: none; color: white; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    .tab-btn.active { background: #facc15; color: #0f172a; }
+
+    /* List Item Card */
+    .item-card { background: #1e293b; padding: 15px; border-radius: 10px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+    .item-card h4 { font-size: 15px; margin-bottom: 5px; }
+    .item-card p { font-size: 12px; color: #94a3b8; }
+    .btn-action { background: #2563eb; color: white; border: none; padding: 8px 15px; border-radius: 6px; font-weight: bold; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h2 id="subject-title">Physical Science</h2>
+    <p style="font-size: 13px; color: #cbd5e1;">Class 10 • Physics Wallah Style Batch</p>
+  </div>
+
+  <!-- Video Player Section -->
+  <div class="video-container">
+    <iframe id="main-player" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+  </div>
+
+  <!-- Navigation Tabs -->
+  <div class="tab-menu">
+    <button class="tab-btn active">Lectures</button>
+    <button class="tab-btn">Notes PDF</button>
+    <button class="tab-btn">DPP / Quiz</button>
+  </div>
+
+  <!-- Content List -->
+  <div id="content-list">
+    <div class="item-card">
+      <div>
+        <h4>Lecture 01: Behavior of Gases</h4>
+        <p>Duration: 45 Mins • Chapter 1</p>
+      </div>
+      <button class="btn-action" onclick="playVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">Play</button>
+    </div>
+
+    <div class="item-card">
+      <div>
+        <h4>Lecture 02: Pressure & Temperature</h4>
+        <p>Duration: 50 Mins • Chapter 1</p>
+      </div>
+      <button class="btn-action" onclick="playVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">Play</button>
+    </div>
+  </div>
+
+  <script>
+    function playVideo(url) {
+      document.getElementById('main-player').src = url;
+    }
+  </script>
+
+</body>
+</html>
