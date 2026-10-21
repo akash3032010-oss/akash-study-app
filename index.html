@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Courses - Study App</title>
+  <title>Home - Akash Study App</title>
   <style>
     * {
       box-sizing: border-box;
@@ -15,193 +15,64 @@
       background-color: #0b0f19;
       color: #ffffff;
       padding: 15px;
-      padding-bottom: 90px;
+      padding-bottom: 80px;
     }
-    .page-title {
-      font-size: 28px;
-      font-weight: 700;
-      text-align: center;
-      margin: 15px 0 25px 0;
-      font-family: Georgia, serif;
-    }
-    
-    /* Top Banner Card */
-    .top-card {
-      background-color: #131b2e;
-      border: 1px solid #1e293b;
-      border-radius: 16px;
-      padding: 20px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .top-card-title {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
-    .step-indicator {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
-    .step-circle {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background-color: #1e293b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 14px;
-      color: #94a3b8;
-    }
-    .step-circle.active {
-      background-color: #2e3a59;
-      color: #fff;
-    }
-    .step-line {
-      height: 2px;
-      width: 80px;
-      background-color: #1e293b;
-    }
-    .step-text {
-      font-size: 12px;
-      color: #94a3b8;
-    }
-    .step-status {
-      font-size: 13px;
-      color: #94a3b8;
-      margin-top: 10px;
-    }
-
-    /* Course Cards */
-    .course-card {
-      background-color: #131b2e;
-      border: 1px solid #1e293b;
-      border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 20px;
-      position: relative;
-    }
-    .course-header {
+    .top-header {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 6px;
-    }
-    .category {
-      color: #f59e0b;
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .stars {
-      color: #f59e0b;
-      font-size: 14px;
-      letter-spacing: 2px;
-    }
-    .course-name {
-      color: #f59e0b;
-      font-size: 22px;
-      font-weight: 800;
-      margin: 8px 0 4px 0;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .author-name {
-      color: #94a3b8;
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-    .sub-batch {
-      color: #10b981;
-      font-size: 16px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
-    .price-text {
-      color: #10b981;
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    /* Buttons & Badges */
-    .btn-buy {
-      background-color: #2563eb;
-      color: #ffffff;
-      border: none;
-      padding: 12px;
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: 600;
-      width: 100%;
-      cursor: pointer;
-    }
-    .btn-buy:hover {
-      background-color: #1d4ed8;
-    }
-    .unlocked-badge {
-      background-color: #10b981;
-      color: #ffffff;
-      padding: 12px;
-      border-radius: 10px;
-      text-align: center;
-      font-weight: 700;
-      font-size: 15px;
-    }
-
-    /* Payment Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.85);
-      justify-content: center;
       align-items: center;
-      z-index: 1000;
+      margin-bottom: 20px;
     }
-    .modal-content {
+    .courses-heading {
+      font-size: 24px;
+      font-weight: bold;
+      font-family: Georgia, serif;
+    }
+    .menu-icon {
+      font-size: 22px;
+      color: #fff;
+    }
+
+    /* Class Section Styling */
+    .section-title {
+      font-size: 18px;
+      color: #f59e0b;
+      margin: 20px 0 10px 0;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 5px;
+    }
+    .class-card {
       background-color: #131b2e;
       border: 1px solid #1e293b;
-      padding: 24px;
-      border-radius: 16px;
-      text-align: center;
-      max-width: 360px;
-      width: 90%;
-      position: relative;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 15px;
     }
-    .close-btn {
-      position: absolute;
-      top: 12px;
-      right: 18px;
-      font-size: 24px;
-      cursor: pointer;
-      color: #94a3b8;
+    .class-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #60a5fa;
+      margin-bottom: 10px;
     }
-    .qr-img {
-      width: 200px;
-      height: 200px;
-      margin: 15px 0;
-      border-radius: 10px;
-      border: 2px solid #1e293b;
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
     }
-    input[type="text"] {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
+    .subject-btn {
+      background-color: #1e293b;
+      color: #e2e8f0;
+      border: 1px solid #334155;
+      padding: 8px;
       border-radius: 8px;
-      border: 1px solid #1e293b;
-      background-color: #0b0f19;
-      color: white;
+      font-size: 13px;
       text-align: center;
-      font-size: 14px;
+      text-decoration: none;
+      display: block;
+    }
+    .subject-btn:hover {
+      background-color: #2563eb;
+      color: #fff;
     }
 
     /* Bottom Navigation Bar */
@@ -214,149 +85,134 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 10px 0;
+      padding: 8px 0;
       border-top: 1px solid #1e293b;
       z-index: 999;
     }
     .nav-item {
       color: #64748b;
       text-decoration: none;
-      font-size: 12px;
+      font-size: 11px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 4px;
+      gap: 3px;
     }
     .nav-item.active {
-      color: #3b82f6;
+      color: #60a5fa;
     }
     .nav-icon {
-      font-size: 20px;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
 
-  <h1 class="page-title">Courses</h1>
-
-  <!-- Top Offer Banner -->
-  <div class="top-card">
-    <div class="top-card-title">Join 2 Courses, Get Premium Mock Test for Free 🎉</div>
-    <div class="step-indicator">
-      <div style="text-align: center;">
-        <div class="step-circle active">1</div>
-        <div class="step-text" style="margin-top:4px;">Course</div>
-      </div>
-      <div class="step-line"></div>
-      <div style="text-align: center;">
-        <div class="step-circle">2</div>
-        <div class="step-text" style="margin-top:4px;">Course</div>
-      </div>
-    </div>
-    <div class="step-status">0/2 Courses Completed</div>
+  <div class="top-header">
+    <div class="courses-heading">Akash Study App</div>
+    <div class="menu-icon">☰</div>
   </div>
 
-  <!-- Course 1: Spoken English -->
-  <div class="course-card">
-    <div class="course-header">
-      <div class="category">মাধ্যমিক ২০২৭</div>
-      <div class="stars">★★★★★</div>
-    </div>
-    <div class="course-name">SPOKEN ENGLISH</div>
-    <div class="author-name">- by Akash Study App</div>
-    <div class="sub-batch" style="color: #60a5fa;">GUARANTEE BATCH</div>
-    <div class="price-text">Price: ₹499</div>
-    <div id="action-spoken">
-      <button class="btn-buy" onclick="openPaymentModal('Spoken English', 499)">Buy Now</button>
+  <h2 class="section-title">Select Your Class & Subject</h2>
+
+  <!-- Class 5 -->
+  <div class="class-card">
+    <div class="class-title">Class 5</div>
+    <div class="subject-grid">
+      <a href="bangla.html" class="subject-btn">Bengali</a>
+      <a href="english.html" class="subject-btn">English</a>
+      <a href="math.html" class="subject-btn">Mathematics</a>
+      <a href="science.html" class="subject-btn">Environmental Science</a>
     </div>
   </div>
 
-  <!-- Course 2: Grammar Batch -->
-  <div class="course-card">
-    <div class="course-header">
-      <div class="category">মাধ্যমিক ২০২৭</div>
-      <div class="stars">★★★★★</div>
-    </div>
-    <div class="course-name">GRAMMAR BATCH</div>
-    <div class="author-name">- by Akash Study App</div>
-    <div class="sub-batch">CHAMPION BATCH</div>
-    <div class="price-text">Price: ₹299</div>
-    <div id="action-grammar">
-      <button class="btn-buy" onclick="openPaymentModal('Grammar Batch', 299)">Buy Now</button>
+  <!-- Class 6 -->
+  <div class="class-card">
+    <div class="class-title">Class 6</div>
+    <div class="subject-grid">
+      <a href="bangla.html" class="subject-btn">Bengali</a>
+      <a href="english.html" class="subject-btn">English</a>
+      <a href="math.html" class="subject-btn">Mathematics</a>
+      <a href="science.html" class="subject-btn">Science</a>
+      <a href="history.html" class="subject-btn">History</a>
+      <a href="geography.html" class="subject-btn">Geography</a>
     </div>
   </div>
 
-  <!-- Payment Modal -->
-  <div id="paymentModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-      <h3 id="modalTitle" style="color: #f59e0b;">Course Name</h3>
-      <p style="margin: 8px 0; font-size: 15px;">Payable Amount: <b id="modalPrice" style="color: #10b981;">₹0</b></p>
-      
-      <!-- PhonePe QR Code Image Link -->
-      <img src="your-phonepe-qr.png" alt="PhonePe QR Code" class="qr-img" />
-      <p style="font-size: 12px; color: #94a3b8; margin-bottom: 12px;">Scan & Pay using PhonePe / Any UPI App</p>
+  <!-- Class 7 -->
+  <div class="class-card">
+    <div class="class-title">Class 7</div>
+    <div class="subject-grid">
+      <a href="bangla.html" class="subject-btn">Bengali</a>
+      <a href="english.html" class="subject-btn">English</a>
+      <a href="math.html" class="subject-btn">Mathematics</a>
+      <a href="science.html" class="subject-btn">Science</a>
+      <a href="history.html" class="subject-btn">History</a>
+      <a href="geography.html" class="subject-btn">Geography</a>
+    </div>
+  </div>
 
-      <input type="text" id="txnId" placeholder="Enter UTR / Transaction ID" />
-      <button class="btn-buy" onclick="verifyAndUnlock()">Submit & Unlock</button>
+  <!-- Class 8 -->
+  <div class="class-card">
+    <div class="class-title">Class 8</div>
+    <div class="subject-grid">
+      <a href="bangla.html" class="subject-btn">Bengali</a>
+      <a href="english.html" class="subject-btn">English</a>
+      <a href="math.html" class="subject-btn">Mathematics</a>
+      <a href="science.html" class="subject-btn">Science</a>
+      <a href="history.html" class="subject-btn">History</a>
+      <a href="geography.html" class="subject-btn">Geography</a>
+    </div>
+  </div>
+
+  <!-- Class 9 -->
+  <div class="class-card">
+    <div class="class-title">Class 9</div>
+    <div class="subject-grid">
+      <a href="bangla.html" class="subject-btn">Bengali</a>
+      <a href="english.html" class="subject-btn">English</a>
+      <a href="math.html" class="subject-btn">Mathematics</a>
+      <a href="science.html" class="subject-btn">Physical Science</a>
+      <a href="science.html" class="subject-btn">Life Science</a>
+      <a href="history.html" class="subject-btn">History</a>
+      <a href="geography.html" class="subject-btn">Geography</a>
+    </div>
+  </div>
+
+  <!-- Class 10 (Madhyamik) -->
+  <div class="class-card">
+    <div class="class-title">Class 10 (Madhyamik)</div>
+    <div class="subject-grid">
+      <a href="bangla.html" class="subject-btn">Bengali</a>
+      <a href="english.html" class="subject-btn">English</a>
+      <a href="math.html" class="subject-btn">Mathematics</a>
+      <a href="science.html" class="subject-btn">Physical Science</a>
+      <a href="science.html" class="subject-btn">Life Science</a>
+      <a href="history.html" class="subject-btn">History</a>
+      <a href="geography.html" class="subject-btn">Geography</a>
     </div>
   </div>
 
   <!-- Bottom Navigation Bar -->
   <div class="bottom-nav">
-    <a href="index.html" class="nav-item">
+    <a href="index.html" class="nav-item active">
       <span class="nav-icon">🏠</span>
       <span>Home</span>
     </a>
-    <a href="index.html" class="nav-item active">
+    <a href="chapters.html" class="nav-item">
       <span class="nav-icon">🎓</span>
       <span>Courses</span>
     </a>
+    <a href="test.html" class="nav-item">
+      <span class="nav-icon">📄</span>
+      <span>Test</span>
+    </a>
+    <a href="dashboard.html" class="nav-item">
+      <span class="nav-icon">👤</span>
+      <span>Dashboard</span>
+    </a>
   </div>
-
-  <script>
-    let selectedCourse = "";
-
-    window.onload = function() {
-      checkStatus();
-    };
-
-    function checkStatus() {
-      if (localStorage.getItem("unlocked_Spoken English") === "true") {
-        document.getElementById("action-spoken").innerHTML = '<div class="unlocked-badge">🔓 Course Unlocked</div>';
-      }
-      if (localStorage.getItem("unlocked_Grammar Batch") === "true") {
-        document.getElementById("action-grammar").innerHTML = '<div class="unlocked-badge">🔓 Course Unlocked</div>';
-      }
-    }
-
-    function openPaymentModal(courseName, price) {
-      selectedCourse = courseName;
-      document.getElementById("modalTitle").innerText = courseName;
-      document.getElementById("modalPrice").innerText = "₹" + price;
-      document.getElementById("paymentModal").style.display = "flex";
-    }
-
-    function closeModal() {
-      document.getElementById("paymentModal").style.display = "none";
-      document.getElementById("txnId").value = "";
-    }
-
-    function verifyAndUnlock() {
-      const txnId = document.getElementById("txnId").value.trim();
-      if (txnId === "") {
-        alert("Daya kore UPI Transaction ID / UTR number din!");
-        return;
-      }
-
-      localStorage.setItem("unlocked_" + selectedCourse, "true");
-      alert(selectedCourse + " Course successfully unlock hoye gechhe!");
-      
-      closeModal();
-      checkStatus();
-    }
-  </script>
 
 </body>
   </html>
-                                           
+        
