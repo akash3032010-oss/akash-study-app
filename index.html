@@ -35,7 +35,7 @@
                 </div>
             </div>
             
-            <!-- FIXED: View Test button wrapeed in <a> tag -->
+            <!-- View Test Button -->
             <a href="chapters.html" class="w-full bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-sm transition-all duration-200 block text-center">
                 <span>View Test</span>
                 <i class="fa-solid fa-chevron-right text-xs"></i>
@@ -50,7 +50,7 @@
                 <p class="text-xs text-gray-400 mt-1">Make Your Self, Better Everyday.</p>
             </div>
 
-            <!-- Features Grid FIXED: Turned divs into clickable links -->
+            <!-- Features Grid -->
             <div class="grid grid-cols-3 gap-2 text-center pt-2">
                 <a href="index.html" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
                     <i class="fa-solid fa-book-bookmark text-emerald-400 text-lg mb-1"></i>
@@ -71,28 +71,35 @@
 
     </main>
 
-    <!-- Bottom Navigation Bar FIXED: Increased z-index so Netlify badge doesn't block it -->
+    <!-- Bottom Navigation Bar -->
     <nav class="fixed bottom-0 left-0 right-0 bg-[#181818]/95 backdrop-blur-md border-t border-gray-800/80 py-2 px-6 flex justify-between items-center max-w-md mx-auto z-[9999]">
-        <a href="index.html" class="flex flex-col items-center text-gray-400 hover:text-white text-xs gap-1">
+        <!-- Home Link -->
+        <a href="index.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
             <i class="fa-solid fa-house text-lg"></i>
             <span>Home</span>
         </a>
-        <a href="chapters.html" class="flex flex-col items-center text-gray-400 hover:text-white text-xs gap-1">
+
+        <!-- Courses Link -->
+        <a href="chapters.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
             <i class="fa-solid fa-graduation-cap text-lg"></i>
             <span>Courses</span>
         </a>
-        <a href="test.html" class="flex flex-col items-center text-blue-400 text-xs gap-1">
+
+        <!-- Test Link -->
+        <a href="test.html" class="flex flex-col items-center text-blue-400 text-xs gap-1 cursor-pointer">
             <div class="bg-blue-200/20 px-4 py-1 rounded-full flex items-center justify-center">
                 <i class="fa-solid fa-clipboard-list text-lg text-blue-400"></i>
             </div>
             <span class="font-semibold">Test</span>
         </a>
-        <a href="dashboard.html" class="flex flex-col items-center text-gray-400 hover:text-white text-xs gap-1">
+
+        <!-- Dashboard Link (Jodi apnar dashboard file-er nam onno kichu hoy, jemon profile.html, tobe href e seta boshiye deben) -->
+        <a href="dashboard.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
             <i class="fa-solid fa-circle-user text-lg"></i>
             <span>Dashboard</span>
         </a>
     </nav>
 
 </body>
-            </html>
-            
+    </html>
+    
