@@ -1,75 +1,145 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Course Content - PW Style</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
-    body { background-color: #0f172a; color: white; padding: 20px; }
-    
-    .header { background: #1e293b; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
-    .header h2 { color: #facc15; }
-
-    /* Video Player Box */
-    .video-container { background: #000; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 20px; }
-    iframe { width: 100%; height: 220px; border: none; }
-
-    /* Tab Menu (Lectures, Notes, Test) */
-    .tab-menu { display: flex; gap: 10px; margin-bottom: 20px; }
-    .tab-btn { flex: 1; padding: 12px; background: #334155; border: none; color: white; border-radius: 8px; font-weight: bold; cursor: pointer; }
-    .tab-btn.active { background: #facc15; color: #0f172a; }
-
-    /* List Item Card */
-    .item-card { background: #1e293b; padding: 15px; border-radius: 10px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
-    .item-card h4 { font-size: 15px; margin-bottom: 5px; }
-    .item-card p { font-size: 12px; color: #94a3b8; }
-    .btn-action { background: #2563eb; color: white; border: none; padding: 8px 15px; border-radius: 6px; font-weight: bold; cursor: pointer; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses / Chapters - Safollo App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-[#121212] text-white font-sans min-h-screen pb-28">
 
-  <div class="header">
-    <h2 id="subject-title">Physical Science</h2>
-    <p style="font-size: 13px; color: #cbd5e1;">Class 10 • Physics Wallah Style Batch</p>
-  </div>
+    <!-- Top Header -->
+    <header class="flex justify-between items-center px-5 py-4 border-b border-gray-800/60">
+        <h1 class="text-2xl font-bold font-serif tracking-wide text-gray-100">All Courses</h1>
+        <button class="text-xl text-gray-300 hover:text-white cursor-pointer">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
 
-  <!-- Video Player Section -->
-  <div class="video-container">
-    <iframe id="main-player" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
-  </div>
+    <main class="p-4 space-y-4 max-w-md mx-auto">
 
-  <!-- Navigation Tabs -->
-  <div class="tab-menu">
-    <button class="tab-btn active">Lectures</button>
-    <button class="tab-btn">Notes PDF</button>
-    <button class="tab-btn">DPP / Quiz</button>
-  </div>
+        <!-- Subject List Section -->
+        <div class="space-y-3">
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-wider">Select Subject</h2>
 
-  <!-- Content List -->
-  <div id="content-list">
-    <div class="item-card">
-      <div>
-        <h4>Lecture 01: Behavior of Gases</h4>
-        <p>Duration: 45 Mins • Chapter 1</p>
-      </div>
-      <button class="btn-action" onclick="playVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">Play</button>
-    </div>
+            <!-- Bangla Card -->
+            <div onclick="window.location.href='bangla.html'" class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-emerald-500/50 transition cursor-pointer">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-400 text-xl border border-blue-500/30">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-100">Bangla</h3>
+                        <p class="text-xs text-gray-400">Chapters & Notes Available</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-gray-500 text-xs"></i>
+            </div>
 
-    <div class="item-card">
-      <div>
-        <h4>Lecture 02: Pressure & Temperature</h4>
-        <p>Duration: 50 Mins • Chapter 1</p>
-      </div>
-      <button class="btn-action" onclick="playVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">Play</button>
-    </div>
-  </div>
+            <!-- English Card -->
+            <div onclick="window.location.href='english.html'" class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-emerald-500/50 transition cursor-pointer">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-emerald-600/20 rounded-xl flex items-center justify-center text-emerald-400 text-xl border border-emerald-500/30">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-100">English</h3>
+                        <p class="text-xs text-gray-400">Chapters & Notes Available</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-gray-500 text-xs"></i>
+            </div>
 
-  <script>
-    function playVideo(url) {
-      document.getElementById('main-player').src = url;
-    }
-  </script>
+            <!-- Math Card -->
+            <div onclick="window.location.href='math.html'" class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-emerald-500/50 transition cursor-pointer">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-amber-600/20 rounded-xl flex items-center justify-center text-amber-400 text-xl border border-amber-500/30">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-100">Mathematics</h3>
+                        <p class="text-xs text-gray-400">Chapters & Notes Available</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-gray-500 text-xs"></i>
+            </div>
+
+            <!-- Science Card -->
+            <div onclick="window.location.href='science.html'" class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-emerald-500/50 transition cursor-pointer">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-purple-600/20 rounded-xl flex items-center justify-center text-purple-400 text-xl border border-purple-500/30">
+                        <i class="fa-solid fa-atom"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-100">Science</h3>
+                        <p class="text-xs text-gray-400">Chapters & Notes Available</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-gray-500 text-xs"></i>
+            </div>
+
+            <!-- History Card -->
+            <div onclick="window.location.href='history.html'" class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-emerald-500/50 transition cursor-pointer">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-rose-600/20 rounded-xl flex items-center justify-center text-rose-400 text-xl border border-rose-500/30">
+                        <i class="fa-solid fa-landmark"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-100">History</h3>
+                        <p class="text-xs text-gray-400">Chapters & Notes Available</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-gray-500 text-xs"></i>
+            </div>
+
+            <!-- Geography Card -->
+            <div onclick="window.location.href='geography.html'" class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-emerald-500/50 transition cursor-pointer">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-cyan-600/20 rounded-xl flex items-center justify-center text-cyan-400 text-xl border border-cyan-500/30">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-100">Geography</h3>
+                        <p class="text-xs text-gray-400">Chapters & Notes Available</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-gray-500 text-xs"></i>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-[#181818]/95 backdrop-blur-md border-t border-gray-800/80 py-2 px-6 flex justify-between items-center max-w-md mx-auto z-[9999]">
+        <!-- Home Link (Fixed with ./index.html) -->
+        <a href="./index.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
+            <i class="fa-solid fa-house text-lg"></i>
+            <span>Home</span>
+        </a>
+
+        <!-- Courses Link (Active) -->
+        <a href="chapters.html" class="flex flex-col items-center text-blue-400 text-xs gap-1 cursor-pointer">
+            <div class="bg-blue-200/20 px-4 py-1 rounded-full flex items-center justify-center">
+                <i class="fa-solid fa-graduation-cap text-lg text-blue-400"></i>
+            </div>
+            <span class="font-semibold">Courses</span>
+        </a>
+
+        <!-- Test Link -->
+        <a href="test.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
+            <i class="fa-solid fa-clipboard-list text-lg"></i>
+            <span>Test</span>
+        </a>
+
+        <!-- Dashboard Link -->
+        <a href="dashboard.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
+            <i class="fa-solid fa-circle-user text-lg"></i>
+            <span>Dashboard</span>
+        </a>
+    </nav>
 
 </body>
-</html>
+                  </html>
+                  
