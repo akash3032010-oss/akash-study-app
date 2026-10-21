@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses / Chapters - Safollo App</title>
+    <title>Courses - Akash Study App</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -11,7 +11,7 @@
 
     <!-- Top Header -->
     <header class="flex justify-between items-center px-5 py-4 border-b border-gray-800/60">
-        <h1 class="text-2xl font-bold font-serif tracking-wide text-gray-100">All Courses</h1>
+        <h1 class="text-2xl font-bold font-serif tracking-wide text-gray-100">Courses</h1>
         <button class="text-xl text-gray-300 hover:text-white cursor-pointer">
             <i class="fa-solid fa-bars"></i>
         </button>
@@ -19,101 +19,77 @@
 
     <main class="p-4 space-y-4 max-w-md mx-auto">
 
-        <!-- Subject List Section -->
-        <div class="space-y-3">
-            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-wider">Select Subject</h2>
-
-            <!-- Bangla Card -->
-            <div onclick="window.location.href='bangla.html'" class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-emerald-500/50 transition cursor-pointer">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-400 text-xl border border-blue-500/30">
-                        <i class="fa-solid fa-book-open"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-base font-bold text-gray-100">Bangla</h3>
-                        <p class="text-xs text-gray-400">Chapters & Notes Available</p>
-                    </div>
+        <!-- Progress Banner Card -->
+        <div class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 space-y-3 text-center shadow-lg">
+            <p class="text-xs font-semibold text-gray-200">Join 2 Courses, Get Premium Mock Test for Free 🎉</p>
+            
+            <!-- Progress Bar Illustration -->
+            <div class="flex items-center justify-center gap-2 py-1">
+                <div class="flex flex-col items-center">
+                    <span class="w-6 h-6 rounded-full bg-gray-700 text-white text-xs flex items-center justify-center font-bold">1</span>
+                    <span class="text-[10px] text-gray-400 mt-1">Course</span>
                 </div>
-                <i class="fa-solid fa-chevron-right text-gray-500 text-xs"></i>
+                <div class="w-24 h-1 bg-gray-700 rounded-full"></div>
+                <div class="flex flex-col items-center">
+                    <span class="w-6 h-6 rounded-full bg-gray-700 text-white text-xs flex items-center justify-center font-bold">2</span>
+                    <span class="text-[10px] text-gray-400 mt-1">Course</span>
+                </div>
             </div>
 
-            <!-- English Card -->
-            <div onclick="window.location.href='english.html'" class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-emerald-500/50 transition cursor-pointer">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-emerald-600/20 rounded-xl flex items-center justify-center text-emerald-400 text-xl border border-emerald-500/30">
-                        <i class="fa-solid fa-language"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-base font-bold text-gray-100">English</h3>
-                        <p class="text-xs text-gray-400">Chapters & Notes Available</p>
+            <p class="text-[11px] text-gray-400">0/2 Courses Completed</p>
+        </div>
+
+        <!-- Course Card 1: Madhyamik First Division Course -->
+        <div onclick="window.location.href='science.html'" class="bg-[#181a20] border border-gray-800 rounded-2xl overflow-hidden shadow-xl cursor-pointer hover:border-blue-500/50 transition relative">
+            <div class="p-4 space-y-2 bg-gradient-to-r from-gray-900 via-[#181a20] to-gray-900 border-b border-gray-800/60">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-black tracking-wider text-amber-400 uppercase">মাধ্যমিক ২০২৭</span>
+                    <div class="text-amber-400 text-xs flex gap-0.5">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
                 </div>
-                <i class="fa-solid fa-chevron-right text-gray-500 text-xs"></i>
+                <h2 class="text-lg font-black text-yellow-400 tracking-wide">FIRST DIVISION</h2>
+                <p class="text-xs font-bold text-gray-300">- by Pranab Sir</p>
+                <h3 class="text-base font-extrabold text-blue-400">Guarantee Course</h3>
             </div>
 
-            <!-- Math Card -->
-            <div onclick="window.location.href='math.html'" class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-emerald-500/50 transition cursor-pointer">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-amber-600/20 rounded-xl flex items-center justify-center text-amber-400 text-xl border border-amber-500/30">
-                        <i class="fa-solid fa-calculator"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-base font-bold text-gray-100">Mathematics</h3>
-                        <p class="text-xs text-gray-400">Chapters & Notes Available</p>
+            <div class="p-4 flex justify-between items-center bg-[#14161b]">
+                <span class="bg-red-500/20 border border-red-500/40 text-red-400 text-[11px] font-bold px-2.5 py-1 rounded-lg flex items-center gap-1">
+                    <i class="fa-solid fa-fire text-xs"></i> 40% OFF <span class="text-gray-300 font-normal">13:50:27</span>
+                </span>
+                <span class="bg-gray-800/80 text-gray-300 text-xs font-bold px-3 py-1.5 rounded-xl flex items-center gap-1.5 border border-gray-700">
+                    <i class="fa-solid fa-lock text-[10px]"></i> Locked
+                </span>
+            </div>
+        </div>
+
+        <!-- Course Card 2: English Champion Batch -->
+        <div onclick="window.location.href='english.html'" class="bg-[#181a20] border border-gray-800 rounded-2xl overflow-hidden shadow-xl cursor-pointer hover:border-emerald-500/50 transition relative">
+            <div class="p-4 space-y-2 bg-gradient-to-r from-gray-900 via-[#181a20] to-gray-900 border-b border-gray-800/60">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-black tracking-wider text-amber-400 uppercase">মাধ্যমিক ২০২৭</span>
+                    <div class="text-amber-400 text-xs flex gap-0.5">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
                 </div>
-                <i class="fa-solid fa-chevron-right text-gray-500 text-xs"></i>
+                <h2 class="text-lg font-black text-yellow-400 tracking-wide">ENGLISH</h2>
+                <p class="text-xs font-bold text-gray-300">- by Pranab Sir</p>
+                <h3 class="text-base font-extrabold text-emerald-400">CHAMPION BATCH</h3>
             </div>
 
-            <!-- Science Card -->
-            <div onclick="window.location.href='science.html'" class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-emerald-500/50 transition cursor-pointer">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-purple-600/20 rounded-xl flex items-center justify-center text-purple-400 text-xl border border-purple-500/30">
-                        <i class="fa-solid fa-atom"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-base font-bold text-gray-100">Science</h3>
-                        <p class="text-xs text-gray-400">Chapters & Notes Available</p>
-                    </div>
-                </div>
-                <i class="fa-solid fa-chevron-right text-gray-500 text-xs"></i>
+            <div class="p-4 flex justify-between items-center bg-[#14161b]">
+                <span class="text-xs text-gray-400 font-medium">Zero to Hero in Madhyamik</span>
+                <span class="bg-gray-800/80 text-gray-300 text-xs font-bold px-3 py-1.5 rounded-xl flex items-center gap-1.5 border border-gray-700">
+                    <i class="fa-solid fa-lock text-[10px]"></i> Locked
+                </span>
             </div>
-
-            <!-- History Card -->
-            <div onclick="window.location.href='history.html'" class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-emerald-500/50 transition cursor-pointer">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-rose-600/20 rounded-xl flex items-center justify-center text-rose-400 text-xl border border-rose-500/30">
-                        <i class="fa-solid fa-landmark"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-base font-bold text-gray-100">History</h3>
-                        <p class="text-xs text-gray-400">Chapters & Notes Available</p>
-                    </div>
-                </div>
-                <i class="fa-solid fa-chevron-right text-gray-500 text-xs"></i>
-            </div>
-
-            <!-- Geography Card -->
-            <div onclick="window.location.href='geography.html'" class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-emerald-500/50 transition cursor-pointer">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-cyan-600/20 rounded-xl flex items-center justify-center text-cyan-400 text-xl border border-cyan-500/30">
-                        <i class="fa-solid fa-globe"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-base font-bold text-gray-100">Geography</h3>
-                        <p class="text-xs text-gray-400">Chapters & Notes Available</p>
-                    </div>
-                </div>
-                <i class="fa-solid fa-chevron-right text-gray-500 text-xs"></i>
-            </div>
-
         </div>
 
     </main>
 
     <!-- Bottom Navigation Bar -->
     <nav class="fixed bottom-0 left-0 right-0 bg-[#181818]/95 backdrop-blur-md border-t border-gray-800/80 py-2 px-6 flex justify-between items-center max-w-md mx-auto z-[9999]">
-        <!-- Home Link (Fixed with ./index.html) -->
+        <!-- Home Link -->
         <a href="./index.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
             <i class="fa-solid fa-house text-lg"></i>
             <span>Home</span>
@@ -141,5 +117,5 @@
     </nav>
 
 </body>
-                  </html>
-                  
+                    </html>
+                                                                                                                        
