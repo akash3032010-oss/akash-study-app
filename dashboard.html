@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Safollo App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#121212] text-white font-sans min-h-screen pb-28">
+
+    <!-- Top Header -->
+    <header class="flex justify-between items-center px-5 py-4 border-b border-gray-800/60">
+        <h1 class="text-2xl font-bold font-serif tracking-wide text-gray-100">Dashboard</h1>
+        <button class="text-xl text-gray-300 hover:text-white cursor-pointer">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <main class="p-4 space-y-4 max-w-md mx-auto">
+
+        <!-- User Profile Card -->
+        <div class="bg-[#181a20] border border-gray-800 rounded-2xl p-5 flex items-center gap-4">
+            <div class="w-14 h-14 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 text-2xl font-bold border border-blue-500/30">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div>
+                <h2 class="text-lg font-bold text-gray-100">Student Profile</h2>
+                <p class="text-xs text-gray-400">Welcome back to Safollo App!</p>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 gap-3">
+            <div class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 text-center space-y-1">
+                <i class="fa-solid fa-clipboard-check text-blue-400 text-xl mb-1"></i>
+                <h3 class="text-xl font-bold text-gray-100">0</h3>
+                <p class="text-xs text-gray-400">Tests Completed</p>
+            </div>
+            <div class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 text-center space-y-1">
+                <i class="fa-solid fa-trophy text-emerald-400 text-xl mb-1"></i>
+                <h3 class="text-xl font-bold text-gray-100">0%</h3>
+                <p class="text-xs text-gray-400">Average Score</p>
+            </div>
+        </div>
+
+        <!-- Quick Links / Options -->
+        <div class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 space-y-3">
+            <h3 class="text-sm font-bold text-gray-300">Settings & Info</h3>
+            <div class="space-y-2">
+                <a href="index.html" class="flex items-center justify-between p-3 bg-gray-900/50 rounded-xl hover:bg-gray-800 transition text-sm">
+                    <span class="flex items-center gap-2 text-gray-300"><i class="fa-solid fa-house text-blue-400"></i> Home Page</span>
+                    <i class="fa-solid fa-chevron-right text-xs text-gray-500"></i>
+                </a>
+                <a href="chapters.html" class="flex items-center justify-between p-3 bg-gray-900/50 rounded-xl hover:bg-gray-800 transition text-sm">
+                    <span class="flex items-center gap-2 text-gray-300"><i class="fa-solid fa-graduation-cap text-emerald-400"></i> All Courses</span>
+                    <i class="fa-solid fa-chevron-right text-xs text-gray-500"></i>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-[#181818]/95 backdrop-blur-md border-t border-gray-800/80 py-2 px-6 flex justify-between items-center max-w-md mx-auto z-[9999]">
+        <!-- Home Link -->
+        <a href="index.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
+            <i class="fa-solid fa-house text-lg"></i>
+            <span>Home</span>
+        </a>
+
+        <!-- Courses Link -->
+        <a href="chapters.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
+            <i class="fa-solid fa-graduation-cap text-lg"></i>
+            <span>Courses</span>
+        </a>
+
+        <!-- Test Link -->
+        <a href="test.html" class="flex flex-col items-center text-gray-400 hover:text-white text-xs gap-1 cursor-pointer">
+            <div class="bg-blue-200/20 px-4 py-1 rounded-full flex items-center justify-center">
+                <i class="fa-solid fa-clipboard-list text-lg text-blue-400"></i>
+            </div>
+            <span class="font-semibold">Test</span>
+        </a>
+
+        <!-- Dashboard Link -->
+        <a href="dashboard.html" class="flex flex-col items-center text-blue-400 text-xs gap-1 cursor-pointer">
+            <i class="fa-solid fa-circle-user text-lg"></i>
+            <span>Dashboard</span>
+        </a>
+    </nav>
+
+</body>
+              </html>
+  
