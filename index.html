@@ -5,67 +5,156 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Courses - Study App</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #0f172a;
-      color: #ffffff;
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 20px 20px 80px 20px; /* Bottom nav er jonno padding-bottom */
+      padding: 0;
     }
-    h1 {
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #0b0f19;
+      color: #ffffff;
+      padding: 15px;
+      padding-bottom: 90px;
+    }
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
       text-align: center;
+      margin: 15px 0 25px 0;
+      font-family: Georgia, serif;
     }
-    .course-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .course-card {
-      background-color: #1e293b;
-      border-radius: 10px;
+    
+    /* Top Banner Card */
+    .top-card {
+      background-color: #131b2e;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
       padding: 20px;
-      border: 1px solid #334155;
+      text-align: center;
+      margin-bottom: 20px;
     }
-    .course-title {
-      font-size: 20px;
+    .top-card-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    .step-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .step-circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: bold;
-      color: #f59e0b;
-      margin-bottom: 5px;
-    }
-    .author {
       font-size: 14px;
       color: #94a3b8;
     }
-    .price {
-      font-size: 18px;
-      font-weight: bold;
+    .step-circle.active {
+      background-color: #2e3a59;
+      color: #fff;
+    }
+    .step-line {
+      height: 2px;
+      width: 80px;
+      background-color: #1e293b;
+    }
+    .step-text {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .step-status {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-top: 10px;
+    }
+
+    /* Course Cards */
+    .course-card {
+      background-color: #131b2e;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .course-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+    .category {
+      color: #f59e0b;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .stars {
+      color: #f59e0b;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+    .course-name {
+      color: #f59e0b;
+      font-size: 22px;
+      font-weight: 800;
+      margin: 8px 0 4px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .author-name {
+      color: #94a3b8;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .sub-batch {
       color: #10b981;
-      margin: 10px 0;
-    }
-    .btn {
-      background-color: #2563eb;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
       font-size: 16px;
-      width: 100%;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 15px;
     }
-    .btn:hover {
+    .price-text {
+      color: #10b981;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    /* Buttons & Badges */
+    .btn-buy {
+      background-color: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      width: 100%;
+      cursor: pointer;
+    }
+    .btn-buy:hover {
       background-color: #1d4ed8;
     }
     .unlocked-badge {
       background-color: #10b981;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
+      color: #ffffff;
+      padding: 12px;
+      border-radius: 10px;
       text-align: center;
-      font-weight: bold;
+      font-weight: 700;
+      font-size: 15px;
     }
-    /* Modal Styling */
+
+    /* Payment Modal */
     .modal {
       display: none;
       position: fixed;
@@ -73,25 +162,26 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.85);
       justify-content: center;
       align-items: center;
       z-index: 1000;
     }
     .modal-content {
-      background-color: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
+      background-color: #131b2e;
+      border: 1px solid #1e293b;
+      padding: 24px;
+      border-radius: 16px;
       text-align: center;
-      max-width: 350px;
+      max-width: 360px;
       width: 90%;
       position: relative;
     }
     .close-btn {
       position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 20px;
+      top: 12px;
+      right: 18px;
+      font-size: 24px;
       cursor: pointer;
       color: #94a3b8;
     }
@@ -99,97 +189,128 @@
       width: 200px;
       height: 200px;
       margin: 15px 0;
-      border-radius: 8px;
+      border-radius: 10px;
+      border: 2px solid #1e293b;
     }
     input[type="text"] {
-      width: 90%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      border: 1px solid #334155;
-      background-color: #0f172a;
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: 1px solid #1e293b;
+      background-color: #0b0f19;
       color: white;
       text-align: center;
+      font-size: 14px;
     }
 
-    /* Bottom Navigation Styling */
+    /* Bottom Navigation Bar */
     .bottom-nav {
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      background-color: #1e293b;
+      background-color: #0b0f19;
       display: flex;
       justify-content: space-around;
+      align-items: center;
       padding: 10px 0;
-      border-top: 1px solid #334155;
+      border-top: 1px solid #1e293b;
       z-index: 999;
     }
     .nav-item {
-      color: #94a3b8;
+      color: #64748b;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 12px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 4px;
     }
     .nav-item.active {
-      color: #2563eb;
-      font-weight: bold;
+      color: #3b82f6;
+    }
+    .nav-icon {
+      font-size: 20px;
     }
   </style>
 </head>
 <body>
 
-  <h1>Courses</h1>
+  <h1 class="page-title">Courses</h1>
 
-  <div class="course-container">
-    
-    <!-- Course 1: Spoken English -->
-    <div class="course-card">
-      <div class="course-title">Spoken English</div>
-      <div class="author">- by Pranab Sir</div>
-      <div class="price">Price: ₹499</div>
-      <div id="action-spoken">
-        <button class="btn" onclick="openPaymentModal('Spoken English', 499)">Buy Now</button>
+  <!-- Top Offer Banner -->
+  <div class="top-card">
+    <div class="top-card-title">Join 2 Courses, Get Premium Mock Test for Free 🎉</div>
+    <div class="step-indicator">
+      <div style="text-align: center;">
+        <div class="step-circle active">1</div>
+        <div class="step-text" style="margin-top:4px;">Course</div>
+      </div>
+      <div class="step-line"></div>
+      <div style="text-align: center;">
+        <div class="step-circle">2</div>
+        <div class="step-text" style="margin-top:4px;">Course</div>
       </div>
     </div>
+    <div class="step-status">0/2 Courses Completed</div>
+  </div>
 
-    <!-- Course 2: Grammar Batch -->
-    <div class="course-card">
-      <div class="course-title">Grammar Batch</div>
-      <div class="author">- by Pranab Sir</div>
-      <div class="price">Price: ₹299</div>
-      <div id="action-grammar">
-        <button class="btn" onclick="openPaymentModal('Grammar Batch', 299)">Buy Now</button>
-      </div>
+  <!-- Course 1: Spoken English -->
+  <div class="course-card">
+    <div class="course-header">
+      <div class="category">মাধ্যমিক ২০২৭</div>
+      <div class="stars">★★★★★</div>
     </div>
+    <div class="course-name">SPOKEN ENGLISH</div>
+    <div class="author-name">- by Akash Study App</div>
+    <div class="sub-batch" style="color: #60a5fa;">GUARANTEE BATCH</div>
+    <div class="price-text">Price: ₹499</div>
+    <div id="action-spoken">
+      <button class="btn-buy" onclick="openPaymentModal('Spoken English', 499)">Buy Now</button>
+    </div>
+  </div>
 
+  <!-- Course 2: Grammar Batch -->
+  <div class="course-card">
+    <div class="course-header">
+      <div class="category">মাধ্যমিক ২০২৭</div>
+      <div class="stars">★★★★★</div>
+    </div>
+    <div class="course-name">GRAMMAR BATCH</div>
+    <div class="author-name">- by Akash Study App</div>
+    <div class="sub-batch">CHAMPION BATCH</div>
+    <div class="price-text">Price: ₹299</div>
+    <div id="action-grammar">
+      <button class="btn-buy" onclick="openPaymentModal('Grammar Batch', 299)">Buy Now</button>
+    </div>
   </div>
 
   <!-- Payment Modal -->
   <div id="paymentModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
-      <h3 id="modalTitle">Course Name</h3>
-      <p style="margin: 5px 0;">Payable Amount: <b id="modalPrice" style="color: #10b981;">₹0</b></p>
+      <h3 id="modalTitle" style="color: #f59e0b;">Course Name</h3>
+      <p style="margin: 8px 0; font-size: 15px;">Payable Amount: <b id="modalPrice" style="color: #10b981;">₹0</b></p>
       
-      <!-- IMPORTANT: Change 'your-phonepe-qr.png' to your uploaded image path -->
+      <!-- PhonePe QR Code Image Link -->
       <img src="your-phonepe-qr.png" alt="PhonePe QR Code" class="qr-img" />
-      <p style="font-size: 13px; color: #94a3b8;">Scan & Pay using PhonePe / Any UPI App</p>
+      <p style="font-size: 12px; color: #94a3b8; margin-bottom: 12px;">Scan & Pay using PhonePe / Any UPI App</p>
 
       <input type="text" id="txnId" placeholder="Enter UTR / Transaction ID" />
-      <button class="btn" onclick="verifyAndUnlock()">Submit & Unlock</button>
+      <button class="btn-buy" onclick="verifyAndUnlock()">Submit & Unlock</button>
     </div>
   </div>
 
   <!-- Bottom Navigation Bar -->
   <div class="bottom-nav">
     <a href="index.html" class="nav-item">
-      <span>🏠 Home</span>
+      <span class="nav-icon">🏠</span>
+      <span>Home</span>
     </a>
-    <a href="english.html" class="nav-item active">
-      <span>🎓 Courses</span>
+    <a href="index.html" class="nav-item active">
+      <span class="nav-icon">🎓</span>
+      <span>Courses</span>
     </a>
   </div>
 
@@ -238,4 +359,4 @@
 
 </body>
   </html>
-  
+                                           
