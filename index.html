@@ -12,7 +12,7 @@
     <!-- Top Header -->
     <header class="flex justify-between items-center px-5 py-4 border-b border-gray-800/60">
         <h1 class="text-2xl font-bold font-serif tracking-wide text-gray-100">Mock Tests</h1>
-        <button class="text-xl text-gray-300 hover:text-white">
+        <button class="text-xl text-gray-300 hover:text-white cursor-pointer">
             <i class="fa-solid fa-bars"></i>
         </button>
     </header>
@@ -36,10 +36,10 @@
             </div>
             
             <!-- View Test Button -->
-            <a href="chapters.html" class="w-full bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-sm transition-all duration-200 block text-center">
+            <button onclick="window.location.href='chapters.html'" class="w-full bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-sm transition-all duration-200 cursor-pointer">
                 <span>View Test</span>
                 <i class="fa-solid fa-chevron-right text-xs"></i>
-            </a>
+            </button>
         </div>
 
         <!-- Free Mock Test Section -->
@@ -52,20 +52,20 @@
 
             <!-- Features Grid -->
             <div class="grid grid-cols-3 gap-2 text-center pt-2">
-                <a href="index.html" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
+                <div onclick="window.location.href='chapters.html'" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
                     <i class="fa-solid fa-book-bookmark text-emerald-400 text-lg mb-1"></i>
                     <p class="text-[10px] font-bold text-gray-300">All Subjects</p>
-                </a>
+                </div>
                 
-                <a href="chapters.html" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
+                <div onclick="window.location.href='chapters.html'" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
                     <i class="fa-solid fa-layer-group text-emerald-400 text-lg mb-1"></i>
                     <p class="text-[10px] font-bold text-gray-300">All Chapters</p>
-                </a>
+                </div>
                 
-                <a href="#" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
+                <div onclick="window.location.href='chapters.html'" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
                     <i class="fa-solid fa-infinity text-emerald-400 text-lg mb-1"></i>
                     <p class="text-[10px] font-bold text-gray-300">Unlimited</p>
-                </a>
+                </div>
             </div>
         </div>
 
@@ -93,13 +93,24 @@
             <span class="font-semibold">Test</span>
         </a>
 
-        <!-- Dashboard Link (Jodi apnar dashboard file-er nam onno kichu hoy, jemon profile.html, tobe href e seta boshiye deben) -->
+        <!-- Dashboard Link -->
         <a href="dashboard.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
             <i class="fa-solid fa-circle-user text-lg"></i>
             <span>Dashboard</span>
         </a>
     </nav>
 
+    <!-- Script to remove Netlify badge/disturbance automatically -->
+    <script>
+        setInterval(() => {
+            const elements = document.querySelectorAll('iframe, a');
+            elements.forEach(el => {
+                if ((el.src && el.src.includes('netlify')) || (el.href && el.href.includes('netlify'))) {
+                    el.remove();
+                }
+            });
+        }, 100);
+    </script>
 </body>
-    </html>
+                    </html>
     
