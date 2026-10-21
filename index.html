@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-[#121212] text-white font-sans min-h-screen pb-24">
+<body class="bg-[#121212] text-white font-sans min-h-screen pb-28">
 
     <!-- Top Header -->
     <header class="flex justify-between items-center px-5 py-4 border-b border-gray-800/60">
@@ -34,10 +34,12 @@
                     <i class="fa-solid fa-file-signature"></i>
                 </div>
             </div>
-            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-sm transition">
+            
+            <!-- FIXED: View Test button wrapeed in <a> tag -->
+            <a href="chapters.html" class="w-full bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-sm transition-all duration-200 block text-center">
                 <span>View Test</span>
                 <i class="fa-solid fa-chevron-right text-xs"></i>
-            </button>
+            </a>
         </div>
 
         <!-- Free Mock Test Section -->
@@ -48,32 +50,34 @@
                 <p class="text-xs text-gray-400 mt-1">Make Your Self, Better Everyday.</p>
             </div>
 
-            <!-- Features Grid -->
+            <!-- Features Grid FIXED: Turned divs into clickable links -->
             <div class="grid grid-cols-3 gap-2 text-center pt-2">
-                <div class="bg-gray-900/60 p-2 rounded-xl border border-gray-800">
+                <a href="index.html" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
                     <i class="fa-solid fa-book-bookmark text-emerald-400 text-lg mb-1"></i>
                     <p class="text-[10px] font-bold text-gray-300">All Subjects</p>
-                </div>
-                <div class="bg-gray-900/60 p-2 rounded-xl border border-gray-800">
+                </a>
+                
+                <a href="chapters.html" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
                     <i class="fa-solid fa-layer-group text-emerald-400 text-lg mb-1"></i>
                     <p class="text-[10px] font-bold text-gray-300">All Chapters</p>
-                </div>
-                <div class="bg-gray-900/60 p-2 rounded-xl border border-gray-800">
+                </a>
+                
+                <a href="#" class="bg-gray-900/60 p-2 rounded-xl border border-gray-800 hover:border-emerald-500 transition cursor-pointer flex flex-col items-center justify-center">
                     <i class="fa-solid fa-infinity text-emerald-400 text-lg mb-1"></i>
                     <p class="text-[10px] font-bold text-gray-300">Unlimited</p>
-                </div>
+                </a>
             </div>
         </div>
 
     </main>
 
-    <!-- Bottom Navigation Bar -->
-    <nav class="fixed bottom-0 left-0 right-0 bg-[#181818] border-t border-gray-800/80 py-2 px-6 flex justify-between items-center max-w-md mx-auto z-50">
+    <!-- Bottom Navigation Bar FIXED: Increased z-index so Netlify badge doesn't block it -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-[#181818]/95 backdrop-blur-md border-t border-gray-800/80 py-2 px-6 flex justify-between items-center max-w-md mx-auto z-[9999]">
         <a href="index.html" class="flex flex-col items-center text-gray-400 hover:text-white text-xs gap-1">
             <i class="fa-solid fa-house text-lg"></i>
             <span>Home</span>
         </a>
-        <a href="courses.html" class="flex flex-col items-center text-gray-400 hover:text-white text-xs gap-1">
+        <a href="chapters.html" class="flex flex-col items-center text-gray-400 hover:text-white text-xs gap-1">
             <i class="fa-solid fa-graduation-cap text-lg"></i>
             <span>Courses</span>
         </a>
@@ -90,5 +94,5 @@
     </nav>
 
 </body>
-    </html>
-        
+            </html>
+            
