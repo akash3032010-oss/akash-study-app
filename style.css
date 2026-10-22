@@ -1,46 +1,36 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212; /* আপনার অ্যাপের ডার্ক থিমের সাথে মিলিয়ে দিলাম */
-  margin: 0;
-  padding: 20px;
-  text-align: center;
-  color: #ffffff;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: #121212; color: #ffffff; padding-bottom: 75px; }
 
-.subject-buttons {
-  max-width: 700px;
-  margin: auto;
-}
+/* Top Bar */
+.top-bar { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background-color: #181818; border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 100; }
+.app-title { font-size: 18px; font-weight: bold; color: #fff; }
+.menu-icon { font-size: 20px; color: #aaa; cursor: pointer; }
 
-.subject-buttons h2 {
-  font-size: 22px;
-  margin: 25px 0 12px;
-  color: #e2e8f0;
-}
+/* Class Selector Dropdown */
+.class-selector { background-color: #1e1e1e; margin: 15px; padding: 12px 16px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #333; font-weight: bold; font-size: 14px; }
 
-.subject-buttons a {
-  text-decoration: none;
-  display: inline-block;
-}
+/* Cards */
+.card { background-color: #1e1e1e; border-radius: 16px; overflow: hidden; margin: 15px; border: 1px solid #2c2c2c; position: relative; }
+.card-banner { height: 130px; background: linear-gradient(135deg, #2b32b2, #1488cc); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: bold; text-align: center; padding: 10px; color: #fff; position: relative; }
+.card-body { padding: 16px; }
+.course-title { font-size: 15px; font-weight: bold; margin-bottom: 6px; }
+.instructor { font-size: 13px; color: #aaa; margin-bottom: 10px; }
+.stars { color: #f39c12; font-size: 14px; margin-bottom: 10px; }
 
-.subject-buttons button {
-  width: 180px;
-  height: 50px;
-  margin: 6px;
-  border: none;
-  border-radius: 10px;
-  background-color: #3b82f6;
-  color: white;
-  font-size: 17px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
+/* Badges */
+.badge-lock { position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.7); padding: 6px 12px; border-radius: 20px; font-size: 12px; display: flex; align-items: center; gap: 5px; cursor: pointer; color: #fff; }
+.badge-free { position: absolute; top: 12px; right: 12px; background: #27ae60; color: #fff; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; cursor: pointer; }
 
-.subject-buttons button:hover {
-  background-color: #2563eb;
-}
+/* Bottom Navigation Bar */
+.bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #181818; border-top: 1px solid #2a2a2a; display: flex; justify-content: space-around; padding: 10px 0; z-index: 1000; }
+.nav-item { text-align: center; color: #888; font-size: 11px; cursor: pointer; background: none; border: none; text-decoration: none; }
+.nav-item.active { color: #3498db; }
+.nav-item span { display: block; font-size: 18px; margin-bottom: 2px; }
 
-.subject-buttons button:active {
-  transform: scale(0.95);
-}
+/* Modal */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: center; }
+.modal-content { background: #222; padding: 25px; border-radius: 16px; width: 85%; max-width: 320px; text-align: center; border: 1px solid #444; }
+.scanner-box { width: 150px; height: 150px; background: #333; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; border: 2px dashed #3498db; border-radius: 10px; color: #aaa; font-size: 12px; }
+.btn-pay { background: #27ae60; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; margin-top: 10px; }
+.btn-close { background: #e74c3c; color: white; border: none; padding: 8px 15px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; margin-top: 5px; }
+                 
