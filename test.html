@@ -1,125 +1,42 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tests - Safollo App</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safollo - Test</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-[#121212] text-white font-sans min-h-screen pb-28">
+<body>
 
-    <!-- Top Header -->
-    <header class="flex justify-between items-center px-5 py-4 border-b border-gray-800/60">
-        <h1 class="text-2xl font-bold font-serif tracking-wide text-gray-100">All Tests</h1>
-        <button class="text-xl text-gray-300 hover:text-white cursor-pointer">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-    </header>
+  <div class="top-bar">
+    <div class="app-title">Mock Tests</div>
+    <div class="menu-icon">&#9776;</div>
+  </div>
 
-    <main class="p-4 space-y-4 max-w-md mx-auto">
+  <div class="card">
+    <div class="card-body" style="text-align: center; padding: 25px;">
+      <h4 style="margin-bottom: 8px;">FREE Mock Test</h4>
+      <p style="color: #aaa; font-size: 13px; margin-bottom: 15px;">Make Yourself Better Everyday.</p>
+      <button class="btn-pay" style="width: auto; padding: 8px 20px;">Give Test</button>
+    </div>
+  </div>
 
-        <!-- Available Tests Section -->
-        <div class="space-y-3">
-            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-wider">Select Subject to Test</h2>
+  <div class="card">
+    <div class="card-body" style="text-align: center; padding: 25px;">
+      <h4 style="margin-bottom: 8px;">🏆 Premium Mock Test</h4>
+      <p style="color: #aaa; font-size: 13px; margin-bottom: 15px;">Unlimited Mock Test & Zero Ads.</p>
+      <button class="btn-pay" style="width: auto; padding: 8px 20px; background: #f39c12;">View Now</button>
+    </div>
+  </div>
 
-            <!-- Bangla Test Card -->
-            <div class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-blue-500/50 transition">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-400 text-xl border border-blue-500/30">
-                        <i class="fa-solid fa-book"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-base font-bold text-gray-100">Bangla Mock Test</h3>
-                        <p class="text-xs text-gray-400">10 Questions • 10 Marks</p>
-                    </div>
-                </div>
-                <button onclick="window.location.href='bangla.html'" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition cursor-pointer">
-                    Start
-                </button>
-            </div>
-
-            <!-- English Test Card -->
-            <div class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-blue-500/50 transition">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-emerald-600/20 rounded-xl flex items-center justify-center text-emerald-400 text-xl border border-emerald-500/30">
-                        <i class="fa-solid fa-language"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-base font-bold text-gray-100">English Mock Test</h3>
-                        <p class="text-xs text-gray-400">10 Questions • 10 Marks</p>
-                    </div>
-                </div>
-                <button onclick="window.location.href='english.html'" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition cursor-pointer">
-                    Start
-                </button>
-            </div>
-
-            <!-- Math Test Card -->
-            <div class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-blue-500/50 transition">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-amber-600/20 rounded-xl flex items-center justify-center text-amber-400 text-xl border border-amber-500/30">
-                        <i class="fa-solid fa-calculator"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-base font-bold text-gray-100">Math Mock Test</h3>
-                        <p class="text-xs text-gray-400">10 Questions • 10 Marks</p>
-                    </div>
-                </div>
-                <button onclick="window.location.href='math.html'" class="bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition cursor-pointer">
-                    Start
-                </button>
-            </div>
-
-            <!-- Science Test Card -->
-            <div class="bg-[#181a20] border border-gray-800 rounded-2xl p-4 flex items-center justify-between hover:border-blue-500/50 transition">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-purple-600/20 rounded-xl flex items-center justify-center text-purple-400 text-xl border border-purple-500/30">
-                        <i class="fa-solid fa-flask"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-base font-bold text-gray-100">Science Mock Test</h3>
-                        <p class="text-xs text-gray-400">10 Questions • 10 Marks</p>
-                    </div>
-                </div>
-                <button onclick="window.location.href='science.html'" class="bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition cursor-pointer">
-                    Start
-                </button>
-            </div>
-
-        </div>
-
-    </main>
-
-    <!-- Bottom Navigation Bar -->
-    <nav class="fixed bottom-0 left-0 right-0 bg-[#181818]/95 backdrop-blur-md border-t border-gray-800/80 py-2 px-6 flex justify-between items-center max-w-md mx-auto z-[9999]">
-        <!-- Home Link (Fixed with ./index.html) -->
-        <a href="./index.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
-            <i class="fa-solid fa-house text-lg"></i>
-            <span>Home</span>
-        </a>
-
-        <!-- Courses Link -->
-        <a href="chapters.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
-            <i class="fa-solid fa-graduation-cap text-lg"></i>
-            <span>Courses</span>
-        </a>
-
-        <!-- Test Link (Active) -->
-        <a href="test.html" class="flex flex-col items-center text-blue-400 text-xs gap-1 cursor-pointer">
-            <div class="bg-blue-200/20 px-4 py-1 rounded-full flex items-center justify-center">
-                <i class="fa-solid fa-clipboard-list text-lg text-blue-400"></i>
-            </div>
-            <span class="font-semibold">Test</span>
-        </a>
-
-        <!-- Dashboard Link -->
-        <a href="dashboard.html" class="flex flex-col items-center text-gray-400 hover:text-white active:text-blue-400 text-xs gap-1 cursor-pointer">
-            <i class="fa-solid fa-circle-user text-lg"></i>
-            <span>Dashboard</span>
-        </a>
-    </nav>
+  <!-- Bottom Nav -->
+  <div class="bottom-nav">
+    <a href="index.html" class="nav-item"><span>🏠</span>Home</a>
+    <a href="chapters.html" class="nav-item"><span>📚</span>Courses</a>
+    <a href="test.html" class="nav-item active"><span>📝</span>Test</a>
+    <a href="dashboard.html" class="nav-item"><span>👤</span>Dashboard</a>
+  </div>
 
 </body>
-    </html>
-                        
+      </html>
+      
